@@ -1,0 +1,17 @@
+.env
+auth.json
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+*.log
+*.pid
+*.lock
+sessions/
+logs/
+pairing/
+browser-profile*/
+node_modules/
+__pycache__/
+.venv/
+hermes-agent/
