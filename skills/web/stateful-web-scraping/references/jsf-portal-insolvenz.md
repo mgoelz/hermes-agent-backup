@@ -82,6 +82,20 @@ Full working version lives on the machine at
 4. **Digest**: Markdown/Telegram with Immobilien pinned first; store raw JSON +
    derived dossiers JSON in `data/` (dedupe glob patterns!).
 
+## Historical depth & backfill (measured)
+
+- Archive depth: 2024 dates fully served (verified 15.11.2024: 28 companies,
+  full texts); 2019 returns 0 hits. Practical floor ≈ mid-2021 (InsBekV covers
+  proceedings opened after 26.06.2018; older years incomplete).
+- Backfill driver: `/home/agentuser/insolvenzradar/backfill.js <start> <end>
+  [maxDetailsPerDay]` — one JSON per day in `data/backfill/`, resumable (existing
+  day-files skipped), 3 retries/day with browser relaunch, progress log at
+  `data/backfill.log`. Cost ≈ 4–5 s per day → ~1–2 h for 971 days (2024-01-01
+  → 2026-08-30) in background.
+- Historical volumes differ: Jan 2024 ran ~45–170 publications/day (companies
+  12–113); Aug 2026 ~350–520/day (companies 24–45) — the insolvency wave is
+  quantifiable from the archive itself (sellable report material).
+
 ## Operation notes
 
 - Run from `/home/agentuser/insolvenzradar` (node_modules with playwright).

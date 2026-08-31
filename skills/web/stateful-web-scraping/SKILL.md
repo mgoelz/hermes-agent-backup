@@ -127,6 +127,30 @@ ELF). Playwright's `npx playwright install chromium` fetches a native aarch64
 build. Install time is several minutes — run it in the background with
 notification, not foreground (600 s cap can be too short).
 
+## Backfilling history (resumable bulk runs)
+
+Stateful portals often serve HISTORY, not just today's data — probe the depth
+once (e.g. a 2024 date and a ~5-years-ago date) before assuming you must
+collect-only-forward. A historical archive turns a daily monitor into a
+sellable dataset (backfill as one-time product + live feed as subscription).
+
+Pattern for multi-day/week bulk collection:
+
+- **One file per unit of work** (`data/backfill/<unit>.json`), written
+  immediately after each unit completes. Skip units whose file exists → the
+  run is RESUMABLE: on crash or rate-limit, just relaunch the same command.
+- **Reuse one browser across units**; open a fresh context per unit (cheap,
+  avoids state bleed). On repeated failure, close and relaunch the browser —
+  corrupted browser state, not the target, is the usual cause after hour one.
+- **3 retries per unit**, then log and skip (a gap beats a deadlock).
+- **Prioritize expensive fetches**: if detail views cost seconds each, fetch
+  details only for priority-classified rows (regex on names) with a small cap
+  per unit; you can always deep-fetch later since files are the index.
+- **Log to a file with progress `[n/total]`** so a background run is
+  observable via tail; politeness sleep (1.5–3 s + jitter) between units.
+- Measure per-unit cost first (e.g. ~4–5 s/day) and multiply before promising
+  a completion time to the user; run via terminal(background=true, notify=true).
+
 ## Session-specific example
 
 See `references/jsf-portal-insolvenz.md` for a full worked example: scraping
