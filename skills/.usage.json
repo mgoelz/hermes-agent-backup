@@ -14,19 +14,34 @@
     "use_count": 1,
     "view_count": 1
   },
+  "income-idea-vetting": {
+    "archived_at": null,
+    "created_at": "2026-08-31T19:33:46.580290+00:00",
+    "created_by": "agent",
+    "last_patched_at": "2026-08-31T19:34:54.977922+00:00",
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-08-31T19:34:31.109824+00:00",
+    "last_viewed_at": "2026-08-31T19:34:31.106868+00:00",
+    "patch_count": 2,
+    "patch_generation": 2,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
+  },
   "stateful-web-scraping": {
     "archived_at": null,
     "created_at": "2026-08-31T14:48:07.529884+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-08-31T15:30:03.113878+00:00",
-    "last_reused_patch_generation": 2,
-    "last_used_at": "2026-08-31T15:29:20.836733+00:00",
-    "last_viewed_at": "2026-08-31T15:29:20.834256+00:00",
-    "patch_count": 4,
-    "patch_generation": 4,
+    "last_patched_at": "2026-08-31T19:35:06.769211+00:00",
+    "last_reused_patch_generation": 4,
+    "last_used_at": "2026-08-31T19:31:21.449863+00:00",
+    "last_viewed_at": "2026-08-31T19:31:21.447145+00:00",
+    "patch_count": 5,
+    "patch_generation": 5,
     "pinned": false,
     "state": "active",
-    "use_count": 3,
-    "view_count": 3
+    "use_count": 5,
+    "view_count": 5
   }
 }

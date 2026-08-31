@@ -96,6 +96,17 @@ Full working version lives on the machine at
   12–113); Aug 2026 ~350–520/day (companies 24–45) — the insolvency wave is
   quantifiable from the archive itself (sellable report material).
 
+**Backfill result (completed & verified):** 971/971 days, 0 gaps;
+93,165 announcements, 26,227 company cases, 1,802 priority detail texts.
+Monthly company-insolvency trend 772 → 822 → 887 (2024 → 2025 → Jan–Aug
+2026) — quantifiable from the archive alone.
+
+**Project status:** user DISCONTINUED the monetization (Aug 2026) —
+competition/uncertainty; cron removed. Scripts remain working and
+reactivatable at `/home/agentuser/insolvenzradar/`. Do not re-pitch the
+digest product as-is; see the income-idea-vetting skill's rejected-ideas
+log for kill reasons.
+
 ## Operation notes
 
 - Run from `/home/agentuser/insolvenzradar` (node_modules with playwright).
