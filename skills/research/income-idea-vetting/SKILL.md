@@ -58,3 +58,7 @@ the log explains what killed each and what a revival would need.
   too optimistic' — credibility is the asset.
 - Programmatic-SEO/affiliate content: Google's 2026 core updates deindex
   scaled AI content — treat as dead unless data-moat backed.
+- Speculation/trading pitches with micro-capital (<€1,000): answer with the
+  fee-drag math first (see rejected-ideas-log.md, trading entry), never promise
+  a multiplication plan. Redirect to a free edge-test (Manifold calibration
+  run) or to skill-based income paths.
