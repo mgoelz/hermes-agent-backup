@@ -9,6 +9,9 @@
 5. **Manifold 'LLM beats super-GM at chess'** (p≈0.49): 'I will ignore fun games, at my discretion' + creator clarification excluding purpose-built chess AIs. Creator discretion = hidden veto.
 6. **Manifold 'Did COVID come from a lab?'** (p≈0.29): resolves only at '98% definitive answer… many years after'. Open-ended capital lockup not reflected in the price.
 7. **Russian town capture via fake map** (Manifold 2025): manipulated ISW map accepted as resolution evidence; reversed after discovery. Source-quality trap.
+8. **Manifold 'Millennium Problem solved before 2028'** (p=45¢, 2026-09-05): criteria require OFFICIAL CMI announcement; preprints explicitly excluded ('will not qualify'); CMI rules impose a 2-year post-publication scrutiny window → YES practically impossible before the 1.1.2028 deadline despite the live 'Claude solved Navier-Stokes' hype. Entered M$101 NO at Ø36¢ (tranches, see manifold-api.md). Safeguard: creator-clarification comment scheduled for day 7 (comment lock); if creator signals 'intent' resolution → exit.
+9. **Manifold Greenland markets 2026** (p≈2-3¢): 'binding legal instrument / sovereignty' only; bases, MOUs, leases, SOFA explicitly NO. Price history: 53 spikes ≥5pp, hype top 50¢ (Jan 2026 Trump headlines) → 2¢. Template for the limit-order-into-hype mode: resting NO limits at YES≈40¢ fill during the next wave.
+10. **Manifold 'Iran's regime fall in 2026'** (p≈4.5¢, vol 3M): YES needs BOTH core-institution dissolution AND loss of majority-population control per Reuters/AP/BBC/NYT consensus; creator's own example says a Syria-style territorial-loss scenario resolves NO. June 2026 escalation spike 14¢→4.5¢. Same fade-the-hype template.
 
 ## Trap taxonomy (scan keywords)
 | Trap | Keywords in criteria |

@@ -25,15 +25,15 @@
       "schedule_display": "every 15m",
       "repeat": {
         "times": null,
-        "completed": 1
+        "completed": 4
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-05T11:43:54.537523+00:00",
-      "next_run_at": "2026-09-05T12:14:59.205261+00:00",
-      "last_run_at": "2026-09-05T11:59:59.205261+00:00",
+      "next_run_at": "2026-09-05T13:02:52.485386+00:00",
+      "last_run_at": "2026-09-05T12:47:52.485386+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -51,7 +51,58 @@
       "workdir": null,
       "attach_to_session": true,
       "fire_claim": null
+    },
+    {
+      "id": "d9975d937753",
+      "name": "Millennium-Markt: Absicherungs-Frage posten + Antwort überwachen",
+      "prompt": "Du überwachst den Manifold-Markt \"Will some Millennium Prize Problem be solved before 2028?\" (contractId: c5chdu0g50, slug: will-some-millennium-prize-problem-05gI2qugU2). Wir (Account: HackDaMarket) halten dort M$101 in NO-Shares (~159 Shares, Ø-Einstieg ~36¢). Die These: Die Kriterien verlangen eine OFFIZIELLE CMI-Ankündigung bis 1.1.2028 (Preprints explizit ausgeschlossen, CMI-Regeln haben 2-Jahres-Wartefrist), daher ist NO stark underpriced.\n\nAPI-Key: 89e01ba9-1a0e-4778-a7bf-4259648ffd23\nAuth: Header \"Authorization: Key <KEY>\" auf api.manifold.markets\n\nDer Job läuft täglich um 10:00 Uhr. Vorgehen bei jedem Lauf:\n\n1. Prüfe per API, ob der Account seit dem Signup 7 Tage vergangen sind (Signup war 2026-09-05, also ab 2026-09-12 möglich). Kurz-Check: POST /v0/comment mit Minimal-Kommentar oder direkt der echten Frage versuchen; bei HTTP 403 (\"unlocks 7 days after signup\") noch nicht möglich → beende Lauf still mit \"Noch gesperrt, warte auf 12.09.\" (nur wenn Datum >= 2026-09-12 und immer noch 403: melde das Problem).\n\n2. Wenn Kommentare möglich sind UND die Frage noch nicht gepostet wurde (prüfe /v0/comments?contractId=c5chdu0g50 ob HackDaMarket bereits kommentiert hat):\nPoste diese Frage als Kommentar (markdown):\n---\nQuestion on the resolution criteria before I size a position:\n\nThe criteria require an OFFICIAL announcement by CMI before Jan 1 2028, and explicitly exclude preprints/publications not yet recognized by CMI. Per CMI's own rules, a solution requires ~2 years of community scrutiny before the Scientific Advisory Board even considers it.\n\nSo: if a Millennium Problem is convincingly solved and peer-reviewed/published before the deadline — but CMI has NOT yet made an official announcement (because of its own 2-year waiting rule) — does this market resolve NO?\n\nAsking to clarify before betting, since the market price seems to be trading on the \"solved = YES\" interpretation rather than the \"CMI crowns it = YES\" interpretation.\n---\n(Endpoint: POST https://api.manifold.markets/v0/comment mit JSON {\"contractId\": \"c5chdu0g50\", \"markdown\": \"...\"} und Auth-Header.)\nMelde nach erfolgreichem Posten kurz \"Absicherungs-Frage gepostet\".\n\n3. Wenn die Frage bereits gepostet ist: Prüfe, ob der Ersteller (oder ein Mod) geantwortet hat (neue Kommentare von anderen Usern auf dem Markt seit unserem Kommentar lesen). \n   - Antwort ist zusagehaft im Sinn von \"Nein, NO bleibt NO ohne CMI-Ankündigung\" oder bestätigt den Wortlaut → melde \"ABSICHERUNG BESTÄTIGT: <Aussage kurz>. Position kann gehalten werden.\"\n   - Antwort deutet auf Intent-Auflösung hin (\"würde YES resolven wenn gelöst\") → melde dringend \"WARNUNG: Ersteller deutet Intent-Auflösung an: <Aussage>. Exit-Entscheidung nötig!\"\n   - Keine Antwort → melde kurz \"Frage steht, keine Antwort yet.\"\n\n4. Zusätzlich bei jedem Lauf: aktuellen Markt-Preis checken (/v0/market/c5chdu0g50). Wenn der Kurs unter 25¢ fällt (NO-Quote >75¢) ohne Erklärang, oder über 55¢ steigt, melde das als bemerkenswerte Bewegung.\n\nFasse jeden Lauf in maximal 3 kurzen Sätzen zusammen. Verändere NICHTS an der Position (keine Bets), außer du erkennst in Punkt 3 die Warnung — dann auch nur melden, NICHT selbst verkaufen.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "provider_snapshot": "zai",
+      "model_snapshot": "glm-5.3-flash",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "monitor_script": null,
+      "monitor_url": null,
+      "monitor_state": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *",
+        "display": "every day at 10:00"
+      },
+      "schedule_display": "every day at 10:00",
+      "repeat": {
+        "times": null,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-09-05T12:08:50.037583+00:00",
+      "next_run_at": "2026-09-06T10:00:00+00:00",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "failure_streak": 0,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "6443941773",
+        "chat_name": "Michael",
+        "thread_id": null,
+        "user_id": "6443941773",
+        "scope_id": null
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "attach_to_session": true
     }
   ],
-  "updated_at": "2026-09-05T11:59:59.205784+00:00"
+  "updated_at": "2026-09-05T12:47:52.485949+00:00"
 }

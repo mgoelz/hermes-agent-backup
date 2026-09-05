@@ -21,8 +21,18 @@ GET /v0/bets?contractId=<marketId>&limit=1000&before=<lastBetId>
 - Pagination: `before` takes the **bet ID string** of the last item; passing a timestamp → HTTP 404.
 - Each bet: `probBefore`, `probAfter`, `createdTime`, `amount`, `shares`, `outcome`, `isFilled`, `isCancelled`, zero `fees`. Price series = sort by createdTime, probAfter per bet.
 
-## Placing bets (paper → live switch)
-`POST /v0/bet {contractId, amount, outcome}` — not yet exercised live (paper phase until live numbers confirm backtest).
+## Placing bets (verified live 2026-09-05)
+`POST /v0/bet {contractId, amount, outcome}` — works immediately after signup (only comments are locked 7 days). Response body may be EMPTY even on success → verify via `GET /v0/bets?username=<name>` and check balance in `/v0/me`.
+
+Two measured slippage cases (2026-09-05):
+- THIN book: Millennium-Problem market, M$1 + 4×M$25 tranches (2s pauses) → price 45¢→37¢→36¢, ~159 NO-shares for M$101 (Ø 36¢ vs 55¢ pre-trade). Tranches limit but don't remove impact; on thin books prefer resting limit orders.
+- NORMAL book: Greens-Sachsen-Anhalt market — M$2 probe then M$13 both filled at exactly mid (eff 65.5-65.7¢), price moved 65.46→65.53 only. Active markets absorb M$15-20 slip-free.
+- **The `pool {YES, NO}` fields do NOT predict execution depth.** Pool-math (`n'=n+A; s=y−k/n'`) predicted 80-400% slippage on markets that filled slip-free at mid, and a market it flagged as unusable accepted M$20 at 54-56¢. Never pre-compute slippage from pools — probe empirically (M$2-5 test bet, check fill price + probBefore→probAfter), then tranche.
+
+Limit orders use the same endpoint: `POST /v0/bet {contractId, amount, outcome, limitProb}` — `isFilled:false` in the response confirms a resting order (verified 3× 2026-09-05). Confirm via `GET /v0/bets?username=<name>` filtered to `isFilled==false && isCancelled==false`. Cancel endpoint unverified — test before relying on it.
+
+## Comments
+`POST /v0/comment {contractId, markdown}` → **403 'Commenting on other users' markets unlocks 7 days after signup'** during the lock. Reading comments is always allowed: `GET /v0/comments?contractId=<id>`. Schedule creator-clarification questions via cron for day 7+.
 
 ## Description parsing
 `description` is a TipTap doc dict:
