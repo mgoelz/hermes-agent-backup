@@ -89,6 +89,7 @@ skills:
   creation_nudge_interval: 15
 command_allowlist:
   - script execution via heredoc
+  - script execution via -e/-c flag
 plugins:
   enabled: []
 kanban:

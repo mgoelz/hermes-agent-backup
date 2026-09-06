@@ -2,7 +2,7 @@ Insolvenz-Radar-Projekt (Michael, 08/2026): EINGESTELLT — Entscheidung 08/2026
 §
 Insolvenzportal: nicht per AJAX scrapen; Playwright headless, JS-Setter, #tbl_ergebnis, Lupen-Klick → Popup via ctx.on('page'). Max 1000/Suche.
 §
-Manifold (09/2026): 'HackDaMarket' (Key im Chat). Positionen: Millennium NO M$101@36c; Gruene-SA YES M$15@65,7c; Fed-Hike YES M$20@54,5c; navier NO M$10@66,5c; Limits M$90 Greenland/Iran NO. Fade v2: M$10, 1 Pos/Markt, max 4, Loss -30/d, TP+5pp/SL-6pp. Paper: 5 Trades 1 Win — Fade verliert in Trend-Maerkten, Trend-Filter geplant. Learning: M$10-20 slipppagefrei, v0-pool unbrauchbar, Fade-Edge marktabhaengig. Crons: 416c5fcababd, d9975d937753 (Frage ab 12.09.).
+Manifold (09/2026): 'HackDaMarket' (Key im Chat). Positionen: Millennium NO M$101@36c; Gruene-SA YES M$15@65,7c; Fed-Hike YES M$20@54,5c; navier NO M$10@66,5c; Limits M$90 Greenland/Iran NO. Fade v3: M$10, 1 Pos/Markt, max 4, Loss -30/d, TP+5pp, SL-10pp (3/4 der -6pp-Stops wurden 2h spaeter von Rueckbewegung gerettet), CHOP-SIEB (kein Fade bei >3 8pp-Schueben/24h). Paper: 12 Trades 58%, +13,60 — Whipsaw-Phase (5 Trades/1 Markt) zog Quote runter. Crons: 416c5fcababd, d9975d937753 (Frage ab 12.09.).
 §
 Michael (Telegram, Deutsch): unternehmerisch, will Einkommensquellen aufbauen; mag Out-of-the-box-Ideen abseits gesättigter KI-Nischen. Arbeitsstil: Ideen erst schärfen (Konkurrenz, Risiken, Aufwand) vor Investition; lässt Deliverables challengen; will ehrliche Fakten. Deliverables als Datei. Deutsch, technisch, kein Entwickler. MANIFOLD: hat mir Vollmacht gegeben ('handle selbstständig, entwickle und optimiere deinen Algorithmus stets weiter'); will nur bei echten Änderungen benachrichtigt werden, keine Null-Reports.
 §
