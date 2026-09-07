@@ -68,6 +68,14 @@ Keep cash deployed across four channel types instead of idle; reserve ~40% cash 
 
 **Thin-book partial-fill gotcha (bitten 2026-09)**: a market-order `POST /v0/bet` without `limitProb` on a thin book (vol ~M$10k, pool YES tiny) filled only M$0.41 of a M$30 order — the unfilled budget is simply refunded, NOT held as an open order. Consequence: the position silently ends up a fraction of intended size. On any market below ~M$20k volume, either use `limitProb` (resting order) or verify the fill size in the response/bets list before counting the exposure as deployed.
 
+### Measurable-resolution markets (holder-count pattern, proven 2026-09)
+
+Best subclass: markets whose resolution variable can be **queried directly via the API before betting**. Example: 'Will YES have more holders than NO?' — resolution = counting distinct net-position holders, computable by aggregating `GET /v0/bets?contractId=<id>` per userId (+shares YES, −shares NO). Measured 36 YES vs 15 NO holders with the market at 81¢ → buy YES. Structural bonus: 1 person = 1 holder regardless of size, so whales can't flip it — only many small new entrants on the other side can. Before betting, write the counting query and confirm the number actually supports your side; if the measurable quantity says the market price is fair, skip.
+
+### Cross-market consistency check (avoid false arb)
+
+Before trading a 'sister' market, verify pricing is internally consistent across related markets on overlapping events. Case: 'Alcaraz ≥2 Grand Slams in 2026' at 59¢ — verified 2026 slam winners (AO Alcaraz, RG Zverev, Wimbledon Sinner) meant he needed the US Open title, and the direct 'Alcaraz wins US Open' market sat at 58¢ — consistent pricing, zero edge, skip. Reconstruct the fact base (who won what) from Wikipedia/search BEFORE paying for a market whose answer is already implied by a sibling market.
+
 ## API gotchas (hard-won)
 
 - `/v0/markets` rejects unknown params (`filter=` → 400). Bets pagination uses `before=<last bet id>` (string ID, NOT timestamp — timestamps 404).

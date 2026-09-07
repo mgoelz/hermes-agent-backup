@@ -15,6 +15,13 @@
 11. **Manifold 'Will AI solve a Millennium Prize Problem before 2030'** (p≈77¢, close 2030): criteria need a PEER-REVIEWED paper or accepted CMI submission proving an autonomous-AI proof — stricter than a mere announcement, but NOT subject to the 2-year CMI crown window (peer review suffices). Lesson: near-identical titles can bind to materially different resolution standards — always diff the criteria text market-by-market before assuming cluster-wide edge; also note the irony that our own fade-YES here fights the criteria, so take the TP when it fires.
 12. **Manifold 'AI solves MP in 2026' family** (18%/7%): criteria bind only to 'substantial work by AI' + announcement — a live Anthropic announcement alone could resolve YES. Do NOT short these on criteria grounds during an active news cycle; the '98% CMI certainty' logic of the main market does NOT transfer. Same headline ≠ same fine print, in BOTH directions.
 
+## Short-cycle verifications that paid (2026-09-06/07)
+
+(a) 'Green party ≥5% in Saxony-Anhalt' at 65¢ — poll aggregate (wahlrecht.de/dawum: 5-6% across 5 institutes, 'decided at the 5% barrier' narrative) + clean criteria (official result, exactly 5.00% Zweitstimmen) → YES won, +49% in 2 days.
+(b) 'WTI >$83 on Sep 10' at 97¢ — checked live WTI on Yahoo Finance `CL=F` ($91.48, +10% buffer) before buying at 96.6¢ for a 3%/48h bond trade; criteria bind to EIA spot with named fallback sources.
+(c) 'YES have more holders than NO' at 81¢ — holder counts aggregated from the bets API (36:15) made the resolution variable directly measurable; whales can't flip a holder-count market (1 person = 1 holder).
+Pattern: for any short-cycle market, find the ONE live data source that decides resolution and check it before buying; a 3-5% yield on a verifiable near-certainty beats a bigger yield on an unverifiable one. Also verify sibling-market consistency before assuming edge ('Alcaraz ≥2 slams 2026' at 59¢ implied US-Open-win at 58¢ — internally consistent, no arb, skip). Slams-2026 fact base: AO Alcaraz, RG Zverev, Wimbledon Sinner.
+
 ## Trap taxonomy (scan keywords)
 | Trap | Keywords in criteria |
 |---|---|
