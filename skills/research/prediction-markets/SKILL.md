@@ -25,8 +25,13 @@ Never trade a hypothesis with real M$ before validating against historical bets:
 4. Reality-check the backtest: expect live edge ≈ 1/3 of backtest — live fills are worse than probAfter exits. **Do NOT trust `/v0/markets` `pool` numbers for slippage math** (falsified 2026-09: pool k=y·n math predicted 80-400% slippage on a market that filled M$15 at exactly mid, zero movement). The v0 pool fields do NOT reflect execution depth. The only reliable test is empirical: probe with M$2-5, compare fill's effective price and the market's probBefore→probAfter movement, then scale in tranches. Active markets routinely absorb M$20 slip-free at mid.
 5. **Paper-trade via cron before real bets**: a monitor script + 15-min cronjob that only logs signals and simulated P&L. Compare live vs backtest for ~2 weeks, then decide. Cron pattern: `attach_to_session=true, deliver=origin`; script prints ONLY on open/close so silent ticks deliver nothing. **Time-unit pitfall (bitten once): keep everything in ONE unit** — an early bug added a milliseconds constant to `time.time()` seconds, silently deferring every exit by 83 days.
 
-### Validated finding (2026-09): fade/mean-reversion
+### Validated finding (2026-09): fade/mean-reversion — and v3 refinements
 Price surges (≥8pp in <1h) in liquid Manifold markets (vol >50k) revert within 2h ~75% of the time; fading them averaged +4-8%/trade in backtest (338 events across 20 markets), before slippage. Pattern is structural (overreaction + LP pressure), not market-specific. Working monitor: `~/manifold/fade_monitor.py` + cronjob.
+
+**Live lessons (12 paper trades, +13.6 M$ net):**
+- **Fixed time-hold exits are inferior to TP/SL**: take-profit at +5pp in your favor, stop at −10pp against. A −6pp stop measured on this market set was TOO TIGHT — post-stop price audit showed 3 of 4 stopped trades were later 'saved' by the reversal (markets with 15-30pp amplitude need room). When a stop fires, audit what the price did 2h later: if stops keep getting saved, widen the stop and shrink the stake instead of abandoning the thesis.
+- **Chop sieve**: count ≥8pp pushes in the last 24h on the market; **>3 → no fade** (volatility trap, not mean-reversion regime). One whipsawing news market (navier-stokes) produced 4 of the 5 losses. This one filter would have prevented the whole losing streak.
+- **Concentration kills stats**: one early home-run trade was 82% of net profit; one choppy market took 5 of 12 trades. Cap 1 position per market, max ~4 open, daily loss limit (−30 M$ on a 500 account), stake ~M$10 during system-shakedown, scale only after live hit-rate confirms backtest.
 
 ## Resolution-criteria arbitrage (the 'read the fine print' edge)
 
@@ -51,7 +56,17 @@ Scan pattern: fetch markets, extract description (rich-text doc dict, needs a te
 
 Same binary event, different venues with different prices. Manifold is a thin, retail-heavy market; professional benchmarks (CME FedWatch for Fed decisions, Polymarket for US politics/macro, poll aggregators/wahlrecht.de for elections) are better calibrated. When Manifold deviates materially from the benchmark on the SAME question, trade toward the benchmark — the mismatch, not a forecast, is the edge. Proven 2026-09: Manifold 'Fed hike September' at 53¢ vs CME FedWatch 59.4% and Polymarket equivalent 72% → YES bought at ~54.5¢.
 
-Rules: (1) verify the criteria match the benchmark's question (settled vs expected, specific meeting vs year-end, spot vs futures — e.g. WTI markets bind to EIA *spot*, not NYMEX futures); (2) check `closeTime` is near the resolution event so capital isn't locked (prefer <30 days — 'Wetten, die nicht ewig binden'); (3) examples of benchmark pairs: FOMC decisions → CME FedWatch, US elections → Polymarket/538-style aggregates, German state elections → wahlrecht.de/MDR poll tables (also gives the fine-grained party-threshold data Manifold markets resolve on).
+Rules: (1) verify the criteria match the benchmark's question (settled vs expected, specific meeting vs year-end, spot vs futures — e.g. WTI markets bind to EIA *spot*, not NYMEX futures); (2) check `closeTime` is near the resolution event so capital isn't locked (prefer <30 days — 'Wetten, die nicht ewig binden'); (3) examples of benchmark pairs: FOMC decisions → CME FedWatch, US elections → Polymarket/538-style aggregates, German state elections → wahlrecht.de/MDR poll tables (also gives the fine-grained party-threshold data Manifold markets resolve on). Election-threshold variant that won (Grüne Sachsen-Anhalt, +49%): when polls put a party repeatedly just ABOVE a threshold (5%-Hürde) and the market prices ~65%, poll-aggregate edge + 'barrier proximity' is a tradeable short-cycle bet — wahlrecht.de/dawum.de carry the per-institute numbers.
+
+## Capital-deployment channels (portfolio frame, 2026-09)
+
+Keep cash deployed across four channel types instead of idle; reserve ~40% cash for new arbitrage arrivals (they appear weekly):
+1. **Static criteria-arb** (Millennium-NO pattern) — concentrated, long horizon, manual sizing after safeguard question.
+2. **Hype-absorbing limit orders** (Greenland/Iran pattern) — rest NO limits at historically-reached hype levels; costs nothing while resting, no capital bound until filled.
+3. **Reference-market arb** (Fed/BTC pattern) — recurring on every FOMC/CPI/NFP date; also works on long-dated crypto targets (BTC $120K: Manifold 8¢ vs Polymarket 13-18¢ on identical question = buy the discount, asymmetric payoff).
+4. **'Bond channel'** — park cash in 90-99¢ markets closing <45 days (yield 1-4% per weeks vs 0% idle). Selection scan: probability 0.90–0.995, close ≤45d, volume >M$5k. Only take events with a *near-deterministic* driver (benchmark index milestones, incumbents with stable coalitions); avoid 94-96¢ event-contingent markets (Apple-event style: 4% yield doesn't pay for a tail −100%).
+
+**Thin-book partial-fill gotcha (bitten 2026-09)**: a market-order `POST /v0/bet` without `limitProb` on a thin book (vol ~M$10k, pool YES tiny) filled only M$0.41 of a M$30 order — the unfilled budget is simply refunded, NOT held as an open order. Consequence: the position silently ends up a fraction of intended size. On any market below ~M$20k volume, either use `limitProb` (resting order) or verify the fill size in the response/bets list before counting the exposure as deployed.
 
 ## API gotchas (hard-won)
 

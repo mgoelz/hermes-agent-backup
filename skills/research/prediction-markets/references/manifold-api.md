@@ -31,6 +31,10 @@ Two measured slippage cases (2026-09-05):
 
 Limit orders use the same endpoint: `POST /v0/bet {contractId, amount, outcome, limitProb}` — `isFilled:false` in the response confirms a resting order (verified 3× 2026-09-05). Confirm via `GET /v0/bets?username=<name>` filtered to `isFilled==false && isCancelled==false`. Cancel endpoint unverified — test before relying on it.
 
+**Thin-book partial fill (verified 2026-09-06)**: a market order without `limitProb` on a very thin book (Netanyahu market, pool YES≈10 M$) filled only **M$0.41 of a M$30 order**; the unfilled remainder was refunded (never debited from balance) and did NOT stay as an open order. The bets entry shows `amount == orderAmount == 0.41`, i.e. `orderAmount` is the *filled* budget, not the requested one. Deployment checklist: after every market-order bet, (1) read `shares`/`amount` from the response or bets list, (2) compute `amount/shares` as the effective price, (3) if filled size ≪ intended, either accept the small exposure or re-place with `limitProb` as a resting order. Note Manifold's balance ledger can also book resolution payouts as `totalDeposits` increases — don't confuse that with fresh user deposits.
+
+Resolved-market payout flow: when a market resolves, holders are paid automatically (balance jumps; the original bets keep `isSold:null`). E.g. Greens-Sachsen-Anhalt YES @65.7¢ resolved YES → balance +M$22.83 (stake + profit) without any sell call.
+
 ## Comments
 `POST /v0/comment {contractId, markdown}` → **403 'Commenting on other users' markets unlocks 7 days after signup'** during the lock. Reading comments is always allowed: `GET /v0/comments?contractId=<id>`. Schedule creator-clarification questions via cron for day 7+.
 
