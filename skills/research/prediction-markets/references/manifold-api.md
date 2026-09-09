@@ -25,15 +25,20 @@ GET /v0/bets?contractId=<marketId>&limit=1000&before=<lastBetId>
 `POST /v0/bet {contractId, amount, outcome}` — works immediately after signup (only comments are locked 7 days). Response body may be EMPTY even on success → verify via `GET /v0/bets?username=<name>` and check balance in `/v0/me`.
 
 Two measured slippage cases (2026-09-05):
-- THIN book: Millennium-Problem market, M$1 + 4×M$25 tranches (2s pauses) → price 45¢→37¢→36¢, ~159 NO-shares for M$101 (Ø 36¢ vs 55¢ pre-trade). Tranches limit but don't remove impact; on thin books prefer resting limit orders.
+- THIN book: Millennium-problem market, M$1 + 4×M$25 tranches (2s pauses) → price 45¢→37¢→36¢, ~159 NO-shares for M$101 (Ø 36¢ vs 55¢ pre-trade). Tranches limit but don't remove impact; on thin books prefer resting limit orders.
 - NORMAL book: Greens-Sachsen-Anhalt market — M$2 probe then M$13 both filled at exactly mid (eff 65.5-65.7¢), price moved 65.46→65.53 only. Active markets absorb M$15-20 slip-free.
 - **The `pool {YES, NO}` fields do NOT predict execution depth.** Pool-math (`n'=n+A; s=y−k/n'`) predicted 80-400% slippage on markets that filled slip-free at mid, and a market it flagged as unusable accepted M$20 at 54-56¢. Never pre-compute slippage from pools — probe empirically (M$2-5 test bet, check fill price + probBefore→probAfter), then tranche.
 
-Limit orders use the same endpoint: `POST /v0/bet {contractId, amount, outcome, limitProb}` — `isFilled:false` in the response confirms a resting order (verified 3× 2026-09-05). Confirm via `GET /v0/bets?username=<name>` filtered to `isFilled==false && isCancelled==false`. Cancel endpoint unverified — test before relying on it.
+Limit orders use the same endpoint: `POST /v0/bet {contractId, amount, outcome, limitProb}` — `isFilled:false` in the response confirms a resting order (verified 3× 2026-09-05). Confirm via `GET /v0/bets?username=<name>` filtered to `isFilled==false && isCancelled==false`.
+
+**NO-side limitProb semantics are NOT symmetric with YES (verified 2026-09-09)**: `POST /v0/bet {outcome:"NO", limitProb:0.94}` on a market where NO traded at ~2-3¢ was intended as a resting order at NO-quote 94¢ — instead it **filled instantly at market**, twice. Working rule: never assume a NO-side limit rests at 'NO-quote = limitProb'; before trusting any NO-side limit, probe with M$1-5 and require `isFilled==false` in confirmation — if it fills instantly, express the level differently or skip. Same caution applies to any outcome whose current price is far from the limitProb value.
 
 **Thin-book partial fill (verified 2026-09-06)**: a market order without `limitProb` on a very thin book (Netanyahu market, pool YES≈10 M$) filled only **M$0.41 of a M$30 order**; the unfilled remainder was refunded (never debited from balance) and did NOT stay as an open order. The bets entry shows `amount == orderAmount == 0.41`, i.e. `orderAmount` is the *filled* budget, not the requested one. Deployment checklist: after every market-order bet, (1) read `shares`/`amount` from the response or bets list, (2) compute `amount/shares` as the effective price, (3) if filled size ≪ intended, either accept the small exposure or re-place with `limitProb` as a resting order. Note Manifold's balance ledger can also book resolution payouts as `totalDeposits` increases — don't confuse that with fresh user deposits.
 
 Resolved-market payout flow: when a market resolves, holders are paid automatically (balance jumps; the original bets keep `isSold:null`). E.g. Greens-Sachsen-Anhalt YES @65.7¢ resolved YES → balance +M$22.83 (stake + profit) without any sell call.
+
+## Exiting (sell)
+`POST /v0/market/{id}/sell {"outcome":"NO"}` sells the **entire** position on that outcome in one call (verified 2026-09-09: 2502 NO-shares → +M$76 credit; response echoes negative `shares`/`amount` = position reversal). Requires `outcome` field (400 without it). No partial-amount parameter tested — for partial exits place a counter-bet (`POST /v0/bet` on the opposite outcome) sized to the desired exposure instead. There is NO `/v0/sell` route (404). Cancel is separate: `POST /v0/cancel {"id": betId}` (worked for real orders; 404s on malformed/aggregate entries).
 
 ## Comments
 `POST /v0/comment {contractId, markdown}` → **403 'Commenting on other users' markets unlocks 7 days after signup'** during the lock. Reading comments is always allowed: `GET /v0/comments?contractId=<id>`. Schedule creator-clarification questions via cron for day 7+.

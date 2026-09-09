@@ -58,6 +58,10 @@ Markets price the *colloquial* reading of a question but resolve on the *literal
 
 Scan pattern: fetch markets, extract description (rich-text doc dict, needs a text-walking parser — see references), flag criteria keywords vs title, then manually read top-liquid hits where price implies the colloquial reading. Edge decays once the market notices the clause — be early. Ethically clean (nobody is deceived), and Manifold creators can be asked in comments to clarify ambiguous criteria before betting (community norm favors this — it also locks the creator into a reading).
 
+### News-shock protocol for criteria-arb clusters
+
+These positions WILL eventually face the exact news event the fine print governs — plan the response before it happens. When a headline hits a whole cluster of related markets: (1) verify the institution-level facts (does the anchoring institution accept the claim? 2-year windows, review processes?) — lab press releases are marketing, not resolution evidence; (2) re-grade every position in the cluster against ITS OWN criteria text — exit the ones whose criteria the news actually satisfied (selling an apparently 'against you' position at a still-high price beats holding a resolved loss), hold the ones the fine print still protects; (3) resist averaging down during hype — hype can persist far longer than the criteria logic implies. Proven playbook in `references/resolution-arbitrage.md` case 13.
+
 ### Execution playbook (proven 2026-09)
 
 1. **Price-history forensics as evidence**: list historical ≥5pp spikes with dates. Markets whose YES spikes repeatedly collapsed on the SAME clause (Greenland: 50¢ hype-top → 2¢, 53 spikes) are prime candidates — the clause provably kills every hype wave.
@@ -95,5 +99,7 @@ Before trading a 'sister' market, verify pricing is internally consistent across
 - List endpoint omits `description`; fetch `GET /v0/market/{id}` per market for criteria text.
 - `description` is a TipTap doc dict (`{type:doc, content:[...]}`), not a string — walk it for text nodes; `textDescription` is often empty.
 - `POST /v0/bet` with `limitProb` returns an EMPTY body (no bet id) — confirm placement via the open-orders query, and dedupe placements against the live open-orders list, not stored IDs.
+- **NO-side `limitProb` does not rest where you think**: an intended 'NO at 94¢ quote' limit filled instantly at market (~2¢/share) — probe NO-side limits with M$1-5 and require `isFilled:false` before trusting them (details in references/manifold-api.md).
+- **Sell**: `POST /v0/market/{id}/sell {"outcome":...}` dumps the entire position on that outcome (no partial-amount tested); `/v0/sell` does not exist. Use a counter-bet for partial exits.
 
 References: `references/manifold-api.md` (endpoints + examples), `references/resolution-arbitrage.md` (verified cases + scan recipe).
