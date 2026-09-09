@@ -23,7 +23,7 @@ Never trade a hypothesis with real M$ before validating against historical bets:
 2. Pull trade history: `GET /v0/bets?contractId=<id>&limit=1000` — each bet has `probBefore`/`probAfter`/`createdTime`, so the full price series is reconstructable from bets alone.
 3. Define the signal mechanically (e.g. price move ≥ 8pp within <1h), measure what follows (momentum vs mean reversion), with entry/exit rules and a per-trade stake.
 4. Reality-check the backtest: expect live edge ≈ 1/3 of backtest — live fills are worse than probAfter exits. **Do NOT trust `/v0/markets` `pool` numbers for slippage math** (falsified 2026-09: pool k=y·n math predicted 80-400% slippage on a market that filled M$15 at exactly mid, zero movement). The v0 pool fields do NOT reflect execution depth. The only reliable test is empirical: probe with M$2-5, compare fill's effective price and the market's probBefore→probAfter movement, then scale in tranches. Active markets routinely absorb M$20 slip-free at mid.
-5. **Paper-trade via cron before real bets**: a monitor script + 15-min cronjob that only logs signals and simulated P&L. Compare live vs backtest for ~2 weeks, then decide. Cron pattern: `attach_to_session=true, deliver=origin`; script prints ONLY on open/close so silent ticks deliver nothing. **Time-unit pitfall (bitten once): keep everything in ONE unit** — an early bug added a milliseconds constant to `time.time()` seconds, silently deferring every exit by 83 days.
+5. **Paper-trade via cron before real bets**: a monitor script + 15-min cronjob that only logs signals and simulated P&L. Compare live vs backtest for ~2 weeks, then decide. Two suppression patterns so silent ticks never reach the user: (a) `no_agent=true` + script that prints nothing when nothing happened (empty stdout sends nothing — watchdog pattern); (b) for LLM-agent crons, the prompt must instruct: reply with exactly `[SILENT]` (nothing else) on no-change ticks — the user explicitly does not want 'no news' reports. **Time-unit pitfall (bitten once): keep everything in ONE unit** — an early bug added a milliseconds constant to `time.time()` seconds, silently deferring every exit by 83 days.
 
 ### Validated finding (2026-09): fade/mean-reversion — and v3 refinements
 Price surges (≥8pp in <1h) in liquid Manifold markets (vol >50k) revert within 2h ~75% of the time; fading them averaged +4-8%/trade in backtest (338 events across 20 markets), before slippage. Pattern is structural (overreaction + LP pressure), not market-specific. Working monitor: `~/manifold/fade_monitor.py` + cronjob.
@@ -32,6 +32,19 @@ Price surges (≥8pp in <1h) in liquid Manifold markets (vol >50k) revert within
 - **Fixed time-hold exits are inferior to TP/SL**: take-profit at +5pp in your favor, stop at −10pp against. A −6pp stop measured on this market set was TOO TIGHT — post-stop price audit showed 3 of 4 stopped trades were later 'saved' by the reversal (markets with 15-30pp amplitude need room). When a stop fires, audit what the price did 2h later: if stops keep getting saved, widen the stop and shrink the stake instead of abandoning the thesis.
 - **Chop sieve**: count ≥8pp pushes in the last 24h on the market; **>3 → no fade** (volatility trap, not mean-reversion regime). One whipsawing news market (navier-stokes) produced 4 of the 5 losses. This one filter would have prevented the whole losing streak.
 - **Concentration kills stats**: one early home-run trade was 82% of net profit; one choppy market took 5 of 12 trades. Cap 1 position per market, max ~4 open, daily loss limit (−30 M$ on a 500 account), stake ~M$10 during system-shakedown, scale only after live hit-rate confirms backtest.
+- **v4 entry rules (added after the losing stretch)**: (1) entry window 15¢–85¢ ONLY — fading at extreme prices (e.g. NO at 97¢) is catastrophically asymmetric: pennies of upside, unlimited downside, and the stop can't help; (2) never fade self-referential markets ('THIS ONE', mana-goal markets) — they can fulfill themselves because traders buy YES *because of* the market, so there is no external reality to revert; (3) news sieve: max 1 push per market per 24h — repeated pushes mean an information cycle, not an impulse, and fading news loses (AI-breakthrough hype moved ~5 sister markets together; fades against it all lost).
+- **Mini-stakes are noise, not safety (confirmed at 20 trades)**: 16 sub-M$3 trades netted ±0 while 6 large trades carried everything. After the filter set stabilizes, shrink the trade COUNT and grow the stake (M$25+) on concentrated edges instead of spraying M$10 at everything.
+
+## Execution velocity: resting limits beat market orders (maker mode)
+
+Cron polling (even 3-min) is too slow for course explosions — one market went 60¢→99¢ inside minutes in a single bulk fill; no polling frequency could have caught it. The fix is structural: **place resting limit orders in the book BEFORE the move** so the book executes in milliseconds.
+
+Working pattern (`maker_bot.py`, no_agent cron every 3 min):
+- **Fade-limits**: on markets with 1–2 pushes/24h, rest a limit 4pp improved behind the current price in fade direction — the next spike fills you AT your price instead of you chasing it.
+- **Straddle-maker** on high-amplitude markets (>5 pushes/24h — too choppy to fade, perfect to make): rest BOTH sides (YES at p−8pp, NO at p+8pp). Whichever way the wave breaks, one side fills; volatility pays you instead of stopping you out. Costs nothing while resting.
+- Keep MAX ~6 live orders; 48h expiry then re-place.
+
+**Duplicate-execution pitfall (bitten once)**: `POST /v0/bet` with `limitProb` returns an empty body — do not rely on the response for an order ID. If the bot's state stores `bet_id=None`, every tick re-places the same limit and both copies fill (cost: 2× intended exposure). Fix: dedupe against live book state each tick — `GET /v0/bets?username=<name>`, filter `isFilled==false && isCancelled==false` with a `limitProb`, and build an open-keys set of `(contractId, outcome, round(limitProb,2))`; skip placement if the key exists, and sync the local state against that set instead of tracking IDs.
 
 ## Resolution-criteria arbitrage (the 'read the fine print' edge)
 
@@ -81,5 +94,6 @@ Before trading a 'sister' market, verify pricing is internally consistent across
 - `/v0/markets` rejects unknown params (`filter=` → 400). Bets pagination uses `before=<last bet id>` (string ID, NOT timestamp — timestamps 404).
 - List endpoint omits `description`; fetch `GET /v0/market/{id}` per market for criteria text.
 - `description` is a TipTap doc dict (`{type:doc, content:[...]}`), not a string — walk it for text nodes; `textDescription` is often empty.
+- `POST /v0/bet` with `limitProb` returns an EMPTY body (no bet id) — confirm placement via the open-orders query, and dedupe placements against the live open-orders list, not stored IDs.
 
 References: `references/manifold-api.md` (endpoints + examples), `references/resolution-arbitrage.md` (verified cases + scan recipe).

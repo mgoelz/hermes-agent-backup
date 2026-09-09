@@ -2,7 +2,7 @@ Insolvenz-Radar-Projekt (Michael, 08/2026): EINGESTELLT — Entscheidung 08/2026
 §
 Insolvenzportal: nicht per AJAX scrapen; Playwright headless, JS-Setter, #tbl_ergebnis, Lupen-Klick → Popup via ctx.on('page'). Max 1000/Suche.
 §
-Manifold (09/2026): 'HackDaMarket' (Key im Chat). Balance M$192; Detail-Positionen & Learnings: /home/agentuser/manifold/.hermes-note.md. Realisiert +8,13 (Gruene-SA, Astra). GROSSES RISIKO: Millennium-NO M$101 bei Markt 80c YES (−70 unreal.); Exit-Entscheid hängt an Ersteller-Antwort auf Absicherungs-Frage (ab 12.09., Cron d9975d937753): wortgetreu = halten/+56, Intent = Exit. Fade v4 live (Entry 15-85c, Meta-Tabu, News-Sieb). Cron 416c5fcababd.
+Manifold (09/2026): 'HackDaMarket' (Key im Chat). Balance M$54; Details: /home/agentuser/manifold/.hermes-note.md. NEU: MAKER-BOT live — Fade-Limits+Straddles ins Buch statt Market-Fades (Timing-Kritik), Cron 3 Min. RISIKO: 2x NO@94c AI-Mill-2026 (p=98c!) durch Doppel-Bug (gefixt): -50/+53; YES@78-Limit sichert ab. Millennium NO M$101 (80c, -69, Halten bis 12.09.-Frage); Vuelta M$100@16,2c (ITT 10.09.); LLM-Chess NO M$40. Fade-Cron 416c5fcababd; Frage-Cron d9975d937753.
 §
 Michael (Telegram, Deutsch): unternehmerisch, will Einkommensquellen aufbauen; mag Out-of-the-box-Ideen abseits gesättigter KI-Nischen. Arbeitsstil: Ideen erst schärfen (Konkurrenz, Risiko, Aufwand) vor Investition; will ehrliche Fakten. Deliverables als Datei. Deutsch, technisch, kein Entwickler. Manifold: erteilte Vollmacht für eigenständiges Trading + ständige Algorithmus-Optimierung; will nur bei echten Änderungen benachrichtigt werden (keine Null-Reports); will freies Kapital möglichst voll investiert sehen und genehmigt auch asymmetrische Risikowetten.
 §
