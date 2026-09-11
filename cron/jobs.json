@@ -25,15 +25,15 @@
       "schedule_display": "every 15m",
       "repeat": {
         "times": null,
-        "completed": 521
+        "completed": 525
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-05T11:43:54.537523+00:00",
-      "next_run_at": "2026-09-11T07:09:20.280237+00:00",
-      "last_run_at": "2026-09-11T06:54:20.280237+00:00",
+      "next_run_at": "2026-09-11T08:13:37.425428+00:00",
+      "last_run_at": "2026-09-11T07:58:37.425428+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -52,9 +52,9 @@
       "attach_to_session": true,
       "fire_claim": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-11T06:53:15.997203+00:00",
-        "dispatched_at": "2026-09-11T06:54:05.782077+00:00",
-        "lateness_seconds": 49.8,
+        "scheduled_at": "2026-09-11T07:57:32.165637+00:00",
+        "dispatched_at": "2026-09-11T07:58:19.206453+00:00",
+        "lateness_seconds": 47.0,
         "kind": "on_time"
       }
     },
@@ -141,15 +141,15 @@
       "schedule_display": "every 3m",
       "repeat": {
         "times": null,
-        "completed": 707
+        "completed": 722
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-09T07:46:44.255684+00:00",
-      "next_run_at": "2026-09-11T07:05:46.236901+00:00",
-      "last_run_at": "2026-09-11T07:02:46.236901+00:00",
+      "next_run_at": "2026-09-11T08:05:29.200246+00:00",
+      "last_run_at": "2026-09-11T08:02:29.200246+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -167,13 +167,13 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-11T07:01:15.676260+00:00",
-        "dispatched_at": "2026-09-11T07:02:07.474817+00:00",
-        "lateness_seconds": 51.8,
+        "scheduled_at": "2026-09-11T08:01:28.400780+00:00",
+        "dispatched_at": "2026-09-11T08:02:20.044195+00:00",
+        "lateness_seconds": 51.6,
         "kind": "on_time"
       },
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-11T07:02:46.237329+00:00"
+  "updated_at": "2026-09-11T08:02:29.200585+00:00"
 }
