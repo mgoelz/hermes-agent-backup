@@ -8,4 +8,4 @@ Michael (Telegram, Deutsch): unternehmerisch, will Einkommensquellen aufbauen; m
 §
 Browser-Fix (aarch64): Chrome startet nicht selbst. Fix: ~/.cache/ms-playwright/chromium-*/chrome-linux/chrome --headless=new --remote-debugging-port=9222 --no-sandbox --user-data-dir=$HOME/.config/chromium im Hintergrund starten (Pfad .config/chromium entscheidend!), dann browser_exec normal.
 §
-Kraken-Bots (9/2026): kraken_bot.py (BTC-Fade, Cron 0ae8619f982b) + kraken_multi_bot.py (Multi-Coin, Cron 7f81e4e4db57, 10 Min). Multi: DOT 2%Trigger (25x BTC-Volatilität!), ADA 1,3, LINK 1,2, ETH 0,9, BTC 0,8. TP=Trigger, SL=1,5x, 45 Min-Hold, Liq-Gate >5k€, max 4 offen. PAPER bis nächste Woche, dann Gewinner-Coins live (KRAKEN_LIVE=1 + Keys in ~/.kraken/env).
+Kraken-Bots (9/2026): BTC-Fade (0ae8619f982b) + Multi-Coin v2 (7f81e4e4db57): Regime-Filter (nur CHOP, TREND>1,5% EMA-Abstand aussetzen), RSI-Bestätigung (BUY<40, SELL>60), Triggers DOT 2%/ADA 1,3/LINK 1,2/ETH 0,9/BTC 0,8. Backtest: RSI-Reversion DOT 75% WR, EMA-Crossover VERLUST. PAPER diese Woche, dann live (KRAKEN_LIVE=1+Keys).
