@@ -1,4 +1,4 @@
-Insolvenz-Radar-Projekt (Michael, 08/2026): EINGESTELLT — Entscheidung 08/2026 wegen Unsicherheiten + Konkurrenz. Voll funktionsfähiges System bleibt in /home/agentuser/insolvenzradar/ (Playwright-Scraper scrape_pw.js, backfill.js, dossiers.py, PROJECT_BRIEF.md; 26.227 Firmen-Fälle 2024-2026 in data/backfill/, Trend 772→822→887 Pleiten/Monat). Cron entfernt. Reaktivierbar, falls Michael zurückkommt. Host aarch64 → nur Playwright-Chromium (ARM) läuft, Puppeteer-Chrome nicht.
+Insolvenz-Radar-Projekt (Michael, 08/2026): EINGESTELLT. Voll funktionsfähiges System bleibt in /home/agentuser/insolvenzradar/ (26.227 Firmen-Fälle 2024-2026 in data/backfill/). Cron entfernt. Reaktivierbar. Host aarch64 → nur Playwright-Chromium (ARM) läuft.
 §
 Insolvenzportal: nicht per AJAX scrapen; Playwright headless, JS-Setter, #tbl_ergebnis, Lupen-Klick → Popup via ctx.on('page'). Max 1000/Suche.
 §
@@ -7,3 +7,5 @@ Manifold (09/2026): 'HackDaMarket' (Key im Chat). Balance M$58; Details: manifol
 Michael (Telegram, Deutsch): unternehmerisch, will Einkommensquellen aufbauen; mag Out-of-the-box-Ideen abseits gesättigter KI-Nischen. Arbeitsstil: Ideen erst schärfen (Konkurrenz, Risiko, Aufwand) vor Investition; will ehrliche Fakten. Deliverables als Datei. Deutsch, technisch, kein Entwickler. Manifold: erteilte Vollmacht für eigenständiges Trading + ständige Algorithmus-Optimierung; will nur bei echten Änderungen benachrichtigt werden (keine Null-Reports); will freies Kapital möglichst voll investiert sehen und genehmigt auch asymmetrische Risikowetten.
 §
 Browser-Fix (aarch64): Chrome startet nicht selbst. Fix: ~/.cache/ms-playwright/chromium-*/chrome-linux/chrome --headless=new --remote-debugging-port=9222 --no-sandbox --user-data-dir=$HOME/.config/chromium im Hintergrund starten (Pfad .config/chromium entscheidend!), dann browser_exec normal.
+§
+Kraken-Bots (9/2026): kraken_bot.py (BTC-Fade, Cron 0ae8619f982b) + kraken_multi_bot.py (Multi-Coin, Cron 7f81e4e4db57, 10 Min). Multi: DOT 2%Trigger (25x BTC-Volatilität!), ADA 1,3, LINK 1,2, ETH 0,9, BTC 0,8. TP=Trigger, SL=1,5x, 45 Min-Hold, Liq-Gate >5k€, max 4 offen. PAPER bis nächste Woche, dann Gewinner-Coins live (KRAKEN_LIVE=1 + Keys in ~/.kraken/env).
