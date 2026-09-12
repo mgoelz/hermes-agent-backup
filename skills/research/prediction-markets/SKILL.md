@@ -5,7 +5,14 @@ description: Use when trading or researching prediction markets.
 
 # Prediction Markets
 
-Working with real-money and play-money prediction markets from Germany. The regulated US venues (Kalshi, Polymarket US) do NOT serve German/EU residents (Polymarket is geoblocked; VPN workarounds violate ToS and risk fund forfeiture — out per Michael's ethics rules). **Manifold (manifold.markets)** is the clean venue: play-money (M$), no fees, no KYC, free documented API, legal in DE. Kalshi fees if ever relevant: taker = 7%·p·(1-p) per contract (max 1.75¢ at 50¢), maker = 25% of taker; not available in DE either.
+### Daily P&L review cadence (works well)
+End each active trading day with a single scripted pass: fetch every open position, mark it to the current `probability`, compute unrealized P&L per position and portfolio-wide (position value = shares × current quote; for NO positions use 1−p), and print a sorted table. This is what catches drift like the Millennium position sliding from +29 to −69 unrealized while attention was on new trades. Decide hold/exit per position in writing (hold thesis + exit trigger + exit price), not by mood on the day.
+
+### Real-money venues from Germany (verified 2026-09, re-check before acting)
+
+- **Polymarket: close-only for German accounts** — the GGL classified its event contracts as illegal gambling (national blacklist, Sep 2025). New positions from DE are banned; VPN workarounds violate ToS and risk fund forfeiture — out per Michael's ethics rules.
+- **Kalshi (global): Germany is NOT on its own blocklist** (blocked per Member Agreement: BE/BG/HU/IE/IT/PL/PT/FR), but absence from the list ≠ permission — Kalshi requires compliance with the user's local law, and ESMA (2026-09-11) publicly stated neither venue holds EU authorizations; event contracts may fall under the MiFID II binary-options retail ban. The DE GGL separately says non-sports prediction-market participation from DE is prohibited and may constitute an offense. **Verdict: a DE signup is a legal gray zone with personal risk — do not onboard.** Re-check when ESMA clarifies the MiFID II treatment or Kalshi announces EU licensing (regulator talks confirmed; Alpaca partnership Aug 2026 is building global broker rails). Kalshi API when it opens: `trade-api/v2`, RSA-key auth headers (`KALSHI-ACCESS-KEY/TIMESTAMP/SIGNATURE`), demo endpoint available. Fees: taker = 7%·p·(1-p) per contract (max 1.75¢ at 50¢), maker = 25% of taker.
+- **Realistic path**: run and document the strategy on Manifold as a verifiable track record, port to the first EU-legal venue (API port is small — the strategies are venue-agnostic analysis over a standard order book).
 
 ## Venue facts (Manifold)
 
@@ -102,4 +109,8 @@ Before trading a 'sister' market, verify pricing is internally consistent across
 - **NO-side `limitProb` does not rest where you think**: an intended 'NO at 94¢ quote' limit filled instantly at market (~2¢/share) — probe NO-side limits with M$1-5 and require `isFilled:false` before trusting them (details in references/manifold-api.md).
 - **Sell**: `POST /v0/market/{id}/sell {"outcome":...}` dumps the entire position on that outcome (no partial-amount tested); `/v0/sell` does not exist. Use a counter-bet for partial exits.
 
-References: `references/manifold-api.md` (endpoints + examples), `references/resolution-arbitrage.md` (verified cases + scan recipe).
+## German tax handling (see `references/germany-tax.md`)
+
+Real-money gains trigger: § 23 EStG (1-year holding = tax-free; 1.000 € Freigrenze all-or-nothing; FIFO wallet-based; coin-to-coin swaps taxable), a three-way unsettled classification for prediction-market wins (gambling-free / § 22 Nr. 3 / § 23), and a real gewerblich-classification risk for persistent bots (BFH poker ruling). Tax-Log module (`tax_log.py` + `tax_fifo.py` in ~/manifold/) logs every real trade and FIFO-matches G/V with holding periods — runs on cron, output is Steuerberater-ready CSV/JSON. Build the equivalent BEFORE first real-money trade on any new venue.
+
+References: `references/manifold-api.md` (endpoints + examples), `references/resolution-arbitrage.md` (verified cases + scan recipe), `references/germany-tax.md` (DE tax rules + module pattern).
