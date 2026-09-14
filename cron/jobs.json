@@ -25,15 +25,15 @@
       "schedule_display": "every 15m",
       "repeat": {
         "times": null,
-        "completed": 782
+        "completed": 786
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-05T11:43:54.537523+00:00",
-      "next_run_at": "2026-09-14T05:02:42.256977+00:00",
-      "last_run_at": "2026-09-14T04:47:42.256977+00:00",
+      "next_run_at": "2026-09-14T06:06:10.758036+00:00",
+      "last_run_at": "2026-09-14T05:51:10.758036+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -52,9 +52,9 @@
       "attach_to_session": true,
       "fire_claim": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T04:45:59.954236+00:00",
-        "dispatched_at": "2026-09-14T04:46:45.819451+00:00",
-        "lateness_seconds": 45.9,
+        "scheduled_at": "2026-09-14T05:50:06.930632+00:00",
+        "dispatched_at": "2026-09-14T05:50:54.575085+00:00",
+        "lateness_seconds": 47.6,
         "kind": "on_time"
       }
     },
@@ -141,20 +141,20 @@
       "schedule_display": "every 3m",
       "repeat": {
         "times": null,
-        "completed": 1754
+        "completed": 1769
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-09T07:46:44.255684+00:00",
-      "next_run_at": "2026-09-14T05:01:52.899523+00:00",
-      "last_run_at": "2026-09-14T04:58:52.899523+00:00",
+      "next_run_at": "2026-09-14T06:02:02.920676+00:00",
+      "last_run_at": "2026-09-14T05:59:02.920676+00:00",
       "last_status": "error",
       "last_error": "Script exited with code 1\nstdout:\nTraceback (most recent call last):\n  File \"/home/agentuser/manifold/maker_bot.py\", line 151, in <module>\n    main()\n  File \"/home/agentuser/manifold/maker_bot.py\", line 106, in main\n    if p < 0.10 or p > 0.90 or len(s[\"orders\"]) >= MAX_LIVE_ORDERS - 1:\n       ^\nUnboundLocalError: cannot access local variable 'p' where it is not associated with a value",
       "last_delivery_error": null,
       "last_delivery_unverified": null,
-      "failure_streak": 145,
+      "failure_streak": 160,
       "deliver": "local",
       "origin": {
         "platform": "telegram",
@@ -167,9 +167,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T04:57:52.567696+00:00",
-        "dispatched_at": "2026-09-14T04:58:46.138222+00:00",
-        "lateness_seconds": 53.6,
+        "scheduled_at": "2026-09-14T05:58:02.435456+00:00",
+        "dispatched_at": "2026-09-14T05:58:56.266701+00:00",
+        "lateness_seconds": 53.8,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -199,15 +199,15 @@
       "schedule_display": "every 360m",
       "repeat": {
         "times": null,
-        "completed": 6
+        "completed": 7
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T11:50:45.766755+00:00",
-      "next_run_at": "2026-09-14T05:52:38.250327+00:00",
-      "last_run_at": "2026-09-13T23:52:38.250327+00:00",
+      "next_run_at": "2026-09-14T11:52:55.904157+00:00",
+      "last_run_at": "2026-09-14T05:52:55.904157+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -225,9 +225,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-13T23:52:33.915240+00:00",
-        "dispatched_at": "2026-09-13T23:52:37.549888+00:00",
-        "lateness_seconds": 3.6,
+        "scheduled_at": "2026-09-14T05:52:38.250327+00:00",
+        "dispatched_at": "2026-09-14T05:52:55.016439+00:00",
+        "lateness_seconds": 16.8,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -257,15 +257,15 @@
       "schedule_display": "every 5m",
       "repeat": {
         "times": null,
-        "completed": 452
+        "completed": 463
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:08:33.480266+00:00",
-      "next_run_at": "2026-09-14T05:05:46.805230+00:00",
-      "last_run_at": "2026-09-14T05:00:46.805230+00:00",
+      "next_run_at": "2026-09-14T06:02:56.665248+00:00",
+      "last_run_at": "2026-09-14T05:57:56.665248+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -283,9 +283,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T04:59:46.656615+00:00",
-        "dispatched_at": "2026-09-14T05:00:46.211404+00:00",
-        "lateness_seconds": 59.6,
+        "scheduled_at": "2026-09-14T05:57:55.648376+00:00",
+        "dispatched_at": "2026-09-14T05:57:56.061332+00:00",
+        "lateness_seconds": 0.4,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -315,15 +315,15 @@
       "schedule_display": "every 10m",
       "repeat": {
         "times": null,
-        "completed": 228
+        "completed": 233
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:41:51.789217+00:00",
-      "next_run_at": "2026-09-14T05:09:48.145964+00:00",
-      "last_run_at": "2026-09-14T04:59:48.145964+00:00",
+      "next_run_at": "2026-09-14T06:04:58.878198+00:00",
+      "last_run_at": "2026-09-14T05:54:58.878198+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -341,13 +341,13 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T04:58:48.184811+00:00",
-        "dispatched_at": "2026-09-14T04:59:46.178298+00:00",
-        "lateness_seconds": 58.0,
+        "scheduled_at": "2026-09-14T05:53:55.403982+00:00",
+        "dispatched_at": "2026-09-14T05:54:55.440242+00:00",
+        "lateness_seconds": 60.0,
         "kind": "on_time"
       },
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-14T05:00:46.805859+00:00"
+  "updated_at": "2026-09-14T05:59:02.920986+00:00"
 }
