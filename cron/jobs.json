@@ -25,15 +25,15 @@
       "schedule_display": "every 15m",
       "repeat": {
         "times": null,
-        "completed": 838
+        "completed": 842
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-05T11:43:54.537523+00:00",
-      "next_run_at": "2026-09-14T20:15:54.907107+00:00",
-      "last_run_at": "2026-09-14T19:45:13.055149+00:00",
+      "next_run_at": "2026-09-14T21:05:25.412512+00:00",
+      "last_run_at": "2026-09-14T20:50:25.412512+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -50,14 +50,11 @@
       "enabled_toolsets": null,
       "workdir": null,
       "attach_to_session": true,
-      "fire_claim": {
-        "at": "2026-09-14T20:00:55.349094+00:00",
-        "by": "ubuntu-4gb-nbg1-1:3035660:757554aacc914851abbde1eb527152ab"
-      },
+      "fire_claim": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T20:00:13.055149+00:00",
-        "dispatched_at": "2026-09-14T20:00:54.874603+00:00",
-        "lateness_seconds": 41.8,
+        "scheduled_at": "2026-09-14T20:49:20.411862+00:00",
+        "dispatched_at": "2026-09-14T20:49:59.159811+00:00",
+        "lateness_seconds": 38.7,
         "kind": "on_time"
       }
     },
@@ -144,15 +141,15 @@
       "schedule_display": "every 3m",
       "repeat": {
         "times": null,
-        "completed": 1979
+        "completed": 1994
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-09T07:46:44.255684+00:00",
-      "next_run_at": "2026-09-14T20:04:04.768132+00:00",
-      "last_run_at": "2026-09-14T20:01:04.768132+00:00",
+      "next_run_at": "2026-09-14T21:04:09.051975+00:00",
+      "last_run_at": "2026-09-14T21:01:09.051975+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -170,9 +167,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T20:00:09.577583+00:00",
-        "dispatched_at": "2026-09-14T20:00:54.874603+00:00",
-        "lateness_seconds": 45.3,
+        "scheduled_at": "2026-09-14T21:00:11.047529+00:00",
+        "dispatched_at": "2026-09-14T21:00:59.457643+00:00",
+        "lateness_seconds": 48.4,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -260,15 +257,15 @@
       "schedule_display": "every 5m",
       "repeat": {
         "times": null,
-        "completed": 620
+        "completed": 630
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:08:33.480266+00:00",
-      "next_run_at": "2026-09-14T20:05:55.765375+00:00",
-      "last_run_at": "2026-09-14T20:00:55.765375+00:00",
+      "next_run_at": "2026-09-14T21:02:59.987545+00:00",
+      "last_run_at": "2026-09-14T20:57:59.987545+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -286,9 +283,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T20:00:54.433579+00:00",
-        "dispatched_at": "2026-09-14T20:00:54.874603+00:00",
-        "lateness_seconds": 0.4,
+        "scheduled_at": "2026-09-14T20:56:59.793940+00:00",
+        "dispatched_at": "2026-09-14T20:57:59.373383+00:00",
+        "lateness_seconds": 59.6,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -318,20 +315,20 @@
       "schedule_display": "every 10m",
       "repeat": {
         "times": null,
-        "completed": 310
+        "completed": 316
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:41:51.789217+00:00",
-      "next_run_at": "2026-09-14T20:01:55.132208+00:00",
-      "last_run_at": "2026-09-14T19:51:55.132208+00:00",
-      "last_status": "error",
-      "last_error": "Script exited with code 1\nstdout:\nTraceback (most recent call last):\n  File \"/home/agentuser/manifold/kraken_multi_bot.py\", line 213, in <module>\n    main()\n  File \"/home/agentuser/manifold/kraken_multi_bot.py\", line 192, in main\n    out.append(f\"BLOCKED [{cfg['name']}]: {sig['blocked']} | Schub {sig.get('move','?')}%\")\n    ^^^\nNameError: name 'out' is not defined. Did you mean: 'oct'?",
+      "next_run_at": "2026-09-14T21:08:01.748443+00:00",
+      "last_run_at": "2026-09-14T20:58:01.748443+00:00",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "last_delivery_unverified": null,
-      "failure_streak": 3,
+      "failure_streak": 0,
       "deliver": "local",
       "origin": {
         "platform": "telegram",
@@ -344,13 +341,13 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T19:50:53.146158+00:00",
-        "dispatched_at": "2026-09-14T19:51:52.969401+00:00",
-        "lateness_seconds": 59.8,
+        "scheduled_at": "2026-09-14T20:57:01.221731+00:00",
+        "dispatched_at": "2026-09-14T20:57:59.373383+00:00",
+        "lateness_seconds": 58.2,
         "kind": "on_time"
       },
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-14T20:01:04.768701+00:00"
+  "updated_at": "2026-09-14T21:01:09.052294+00:00"
 }
