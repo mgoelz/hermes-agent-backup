@@ -25,15 +25,15 @@
       "schedule_display": "every 15m",
       "repeat": {
         "times": null,
-        "completed": 798
+        "completed": 801
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-05T11:43:54.537523+00:00",
-      "next_run_at": "2026-09-14T09:18:52.122038+00:00",
-      "last_run_at": "2026-09-14T09:03:52.122038+00:00",
+      "next_run_at": "2026-09-14T10:07:23.029137+00:00",
+      "last_run_at": "2026-09-14T09:52:23.029137+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -52,9 +52,9 @@
       "attach_to_session": true,
       "fire_claim": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T09:02:47.290351+00:00",
-        "dispatched_at": "2026-09-14T09:03:35.130379+00:00",
-        "lateness_seconds": 47.8,
+        "scheduled_at": "2026-09-14T09:51:05.058556+00:00",
+        "dispatched_at": "2026-09-14T09:51:45.162285+00:00",
+        "lateness_seconds": 40.1,
         "kind": "on_time"
       }
     },
@@ -90,7 +90,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-05T12:08:50.037583+00:00",
-      "next_run_at": "2026-09-14T10:00:00+00:00",
+      "next_run_at": "2026-09-15T10:00:00+00:00",
       "last_run_at": "2026-09-13T10:01:34.816060+00:00",
       "last_status": "ok",
       "last_error": null,
@@ -108,11 +108,14 @@
       "enabled_toolsets": null,
       "workdir": null,
       "attach_to_session": true,
-      "fire_claim": null,
+      "fire_claim": {
+        "at": "2026-09-14T10:01:47.404564+00:00",
+        "by": "ubuntu-4gb-nbg1-1:3035660:6b77295432ba46a8ad5eddde78c03e61"
+      },
       "last_dispatch": {
-        "scheduled_at": "2026-09-13T10:00:00+00:00",
-        "dispatched_at": "2026-09-13T10:00:40.944945+00:00",
-        "lateness_seconds": 40.9,
+        "scheduled_at": "2026-09-14T10:00:00+00:00",
+        "dispatched_at": "2026-09-14T10:00:47.028138+00:00",
+        "lateness_seconds": 47.0,
         "kind": "on_time"
       }
     },
@@ -141,20 +144,20 @@
       "schedule_display": "every 3m",
       "repeat": {
         "times": null,
-        "completed": 1815
+        "completed": 1829
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-09T07:46:44.255684+00:00",
-      "next_run_at": "2026-09-14T09:06:43.144075+00:00",
-      "last_run_at": "2026-09-14T09:03:43.144075+00:00",
+      "next_run_at": "2026-09-14T10:02:58.383808+00:00",
+      "last_run_at": "2026-09-14T09:59:58.383808+00:00",
       "last_status": "error",
       "last_error": "Script exited with code 1\nstdout:\nTraceback (most recent call last):\n  File \"/home/agentuser/manifold/maker_bot.py\", line 151, in <module>\n    main()\n  File \"/home/agentuser/manifold/maker_bot.py\", line 106, in main\n    if p < 0.10 or p > 0.90 or len(s[\"orders\"]) >= MAX_LIVE_ORDERS - 1:\n       ^\nUnboundLocalError: cannot access local variable 'p' where it is not associated with a value",
       "last_delivery_error": null,
       "last_delivery_unverified": null,
-      "failure_streak": 206,
+      "failure_streak": 220,
       "deliver": "local",
       "origin": {
         "platform": "telegram",
@@ -167,9 +170,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T09:02:41.495741+00:00",
-        "dispatched_at": "2026-09-14T09:03:35.130379+00:00",
-        "lateness_seconds": 53.6,
+        "scheduled_at": "2026-09-14T09:58:54.193136+00:00",
+        "dispatched_at": "2026-09-14T09:59:46.813321+00:00",
+        "lateness_seconds": 52.6,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -257,15 +260,15 @@
       "schedule_display": "every 5m",
       "repeat": {
         "times": null,
-        "completed": 500
+        "completed": 511
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:08:33.480266+00:00",
-      "next_run_at": "2026-09-14T09:08:36.059956+00:00",
-      "last_run_at": "2026-09-14T09:03:36.059956+00:00",
+      "next_run_at": "2026-09-14T10:04:47.426260+00:00",
+      "last_run_at": "2026-09-14T09:59:47.426260+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -283,9 +286,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T09:03:34.647288+00:00",
-        "dispatched_at": "2026-09-14T09:03:35.130379+00:00",
-        "lateness_seconds": 0.5,
+        "scheduled_at": "2026-09-14T09:58:46.625992+00:00",
+        "dispatched_at": "2026-09-14T09:59:46.813321+00:00",
+        "lateness_seconds": 60.2,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -315,15 +318,15 @@
       "schedule_display": "every 10m",
       "repeat": {
         "times": null,
-        "completed": 250
+        "completed": 256
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:41:51.789217+00:00",
-      "next_run_at": "2026-09-14T09:14:35.372903+00:00",
-      "last_run_at": "2026-09-14T08:54:35.084733+00:00",
+      "next_run_at": "2026-09-14T10:08:49.173068+00:00",
+      "last_run_at": "2026-09-14T09:58:49.173068+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -341,16 +344,13 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T09:04:35.084733+00:00",
-        "dispatched_at": "2026-09-14T09:04:35.338526+00:00",
-        "lateness_seconds": 0.3,
+        "scheduled_at": "2026-09-14T09:57:46.763424+00:00",
+        "dispatched_at": "2026-09-14T09:58:46.609226+00:00",
+        "lateness_seconds": 59.8,
         "kind": "on_time"
       },
-      "fire_claim": {
-        "at": "2026-09-14T09:04:35.700615+00:00",
-        "by": "ubuntu-4gb-nbg1-1:3035660:971e3a22360a43f89e93ddb1691f6622"
-      }
+      "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-14T09:04:35.701369+00:00"
+  "updated_at": "2026-09-14T10:01:47.405190+00:00"
 }
