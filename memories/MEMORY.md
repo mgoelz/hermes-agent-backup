@@ -2,7 +2,7 @@ Insolvenz-Radar-Projekt (Michael, 08/2026): EINGESTELLT. Voll funktionsfähiges 
 §
 Insolvenzportal: nicht per AJAX scrapen; Playwright headless, JS-Setter, #tbl_ergebnis, Lupen-Klick → Popup via ctx.on('page'). Max 1000/Suche.
 §
-Manifold (09/2026): 'HackDaMarket'. KRISIS: Portfolio -154 (Cash 3,88). Vuelta -100 (Mas gewann). Millennium-NO M$101 nur 4,4 wert (97,2c YES durch OpenAI-Headline-Käufe ohne Kriterien-Lektüre). Absicherungs-Kommentar RAUS (13.09., jpml9lnwjxd) — Ersteller-Antwort entscheidet: wortgetreu=NO→+157 vs Intent=YES→-101. Mods greifen bei eindeutigen Kriterien ein. Frage-Cron d9975d937753 obsolet. REALISIERT +41,9.
+Manifold (09/2026): 'HackDaMarket'. KRISIS: Portfolio -154 (Cash 2,92). Vuelta -100 (Mas gewann). Millennium (c5chdu0g50): Kurs 98,8% YES (14.09.) gegen unsere Absicherung — 160,8 NO-Shares (Einsatz M$101) nur noch ~2,6 wert; kein Kommentar-Ersteller Antwort; Cron d9975d937753 auf Event-Only umgestellt (meldet nur bei Kommentar/Kursprung >1pp/Auflösung). REALISIERT +41,9.
 §
 Michael (Telegram, Deutsch): unternehmerisch, will Einkommensquellen aufbauen; mag Out-of-the-box-Ideen abseits gesättigter KI-Nischen. Arbeitsstil: Ideen erst schärfen (Konkurrenz, Risiko, Aufwand) vor Investition; will ehrliche Fakten. Deliverables als Datei. Deutsch, technisch, kein Entwickler. Manifold: erteilte Vollmacht für eigenständiges Trading + ständige Algorithmus-Optimierung; will nur bei echten Änderungen benachrichtigt werden (keine Null-Reports); will freies Kapital möglichst voll investiert sehen und genehmigt auch asymmetrische Risikowetten.
 §

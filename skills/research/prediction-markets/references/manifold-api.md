@@ -41,7 +41,12 @@ Resolved-market payout flow: when a market resolves, holders are paid automatica
 `POST /v0/market/{id}/sell {"outcome":"NO"}` sells the **entire** position on that outcome in one call (verified 2026-09-09: 2502 NO-shares → +M$76 credit; response echoes negative `shares`/`amount` = position reversal). Requires `outcome` field (400 without it). No partial-amount parameter tested — for partial exits place a counter-bet (`POST /v0/bet` on the opposite outcome) sized to the desired exposure instead. There is NO `/v0/sell` route (404). Cancel is separate: `POST /v0/cancel {"id": betId}` (worked for real orders; 404s on malformed/aggregate entries).
 
 ## Comments
-`POST /v0/comment {contractId, markdown}` → **403 'Commenting on other users' markets unlocks 7 days after signup'** during the lock. Reading comments is always allowed: `GET /v0/comments?contractId=<id>`. Schedule creator-clarification questions via cron for day 7+.
+`POST /v0/comment {contractId, markdown}` → **403 'Commenting on other users' markets unlocks 7 days after signup'** during the lock. Reading comments is always allowed: `GET /v0/comments?contractId=<id>` (param `postId=` is rejected with 400 — use `contractId`). Schedule creator-clarification questions via cron for day 7+.
+
+## Position value & P&L
+There is no public 'current position value' endpoint — the market's `/positions` sub-resource (`GET /v0/market/{id}/positions`, no params accepted) returns per-user `{invested, payout, profit, from:{day,week,month}}`, which is the authoritative mark-to-market. Sanity-check a suspicious 'payout' against the current probability: position value = shares × (p for YES, 1−p for NO); the `payout` field has been seen understating a NO position by ~60× (160.8 NO-shares at 98.8% YES ≈ M$2.0 true sell value vs 2.56 shown, but a misread of the field suggested 0.04). The bets list also shows redemptions with NEGATIVE `amount`/`shares` (same-sign as sells) — filter `isRedemption:true` before interpreting rows as exit trades.
+
+Position queries that DON'T exist: `POST /v0/me/market-positions` (404 route), external `api.me-positions.manifold.markets` (empty). Filter `/v0/bets?contractId=<id>&userId=<id>` per market instead.
 
 ## Description parsing
 `description` is a TipTap doc dict:

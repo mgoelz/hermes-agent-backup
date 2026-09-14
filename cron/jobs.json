@@ -25,15 +25,15 @@
       "schedule_display": "every 15m",
       "repeat": {
         "times": null,
-        "completed": 835
+        "completed": 838
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-05T11:43:54.537523+00:00",
-      "next_run_at": "2026-09-14T19:12:00.189554+00:00",
-      "last_run_at": "2026-09-14T18:57:00.189554+00:00",
+      "next_run_at": "2026-09-14T20:15:54.907107+00:00",
+      "last_run_at": "2026-09-14T19:45:13.055149+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -50,18 +50,21 @@
       "enabled_toolsets": null,
       "workdir": null,
       "attach_to_session": true,
-      "fire_claim": null,
+      "fire_claim": {
+        "at": "2026-09-14T20:00:55.349094+00:00",
+        "by": "ubuntu-4gb-nbg1-1:3035660:757554aacc914851abbde1eb527152ab"
+      },
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T18:56:01.837231+00:00",
-        "dispatched_at": "2026-09-14T18:56:41.194660+00:00",
-        "lateness_seconds": 39.4,
+        "scheduled_at": "2026-09-14T20:00:13.055149+00:00",
+        "dispatched_at": "2026-09-14T20:00:54.874603+00:00",
+        "lateness_seconds": 41.8,
         "kind": "on_time"
       }
     },
     {
       "id": "d9975d937753",
       "name": "Millennium-Markt: Absicherungs-Frage posten + Antwort überwachen",
-      "prompt": "Du überwachst den Manifold-Markt \"Will some Millennium Prize Problem be solved before 2028?\" (contractId: c5chdu0g50, slug: will-some-millennium-prize-problem-05gI2qugU2). Wir (Account: HackDaMarket) halten dort M$101 in NO-Shares (~159 Shares, Ø-Einstieg ~36¢). Die These: Die Kriterien verlangen eine OFFIZIELLE CMI-Ankündigung bis 1.1.2028 (Preprints explizit ausgeschlossen, CMI-Regeln haben 2-Jahres-Wartefrist), daher ist NO stark underpriced.\n\nAPI-Key: 89e01ba9-1a0e-4778-a7bf-4259648ffd23\nAuth: Header \"Authorization: Key <KEY>\" auf api.manifold.markets\n\nDer Job läuft täglich um 10:00 Uhr. Vorgehen bei jedem Lauf:\n\n1. Prüfe per API, ob der Account seit dem Signup 7 Tage vergangen sind (Signup war 2026-09-05, also ab 2026-09-12 möglich). Kurz-Check: POST /v0/comment mit Minimal-Kommentar oder direkt der echten Frage versuchen; bei HTTP 403 (\"unlocks 7 days after signup\") noch nicht möglich → beende Lauf still mit \"Noch gesperrt, warte auf 12.09.\" (nur wenn Datum >= 2026-09-12 und immer noch 403: melde das Problem).\n\n2. Wenn Kommentare möglich sind UND die Frage noch nicht gepostet wurde (prüfe /v0/comments?contractId=c5chdu0g50 ob HackDaMarket bereits kommentiert hat):\nPoste diese Frage als Kommentar (markdown):\n---\nQuestion on the resolution criteria before I size a position:\n\nThe criteria require an OFFICIAL announcement by CMI before Jan 1 2028, and explicitly exclude preprints/publications not yet recognized by CMI. Per CMI's own rules, a solution requires ~2 years of community scrutiny before the Scientific Advisory Board even considers it.\n\nSo: if a Millennium Problem is convincingly solved and peer-reviewed/published before the deadline — but CMI has NOT yet made an official announcement (because of its own 2-year waiting rule) — does this market resolve NO?\n\nAsking to clarify before betting, since the market price seems to be trading on the \"solved = YES\" interpretation rather than the \"CMI crowns it = YES\" interpretation.\n---\n(Endpoint: POST https://api.manifold.markets/v0/comment mit JSON {\"contractId\": \"c5chdu0g50\", \"markdown\": \"...\"} und Auth-Header.)\nMelde nach erfolgreichem Posten kurz \"Absicherungs-Frage gepostet\".\n\n3. Wenn die Frage bereits gepostet ist: Prüfe, ob der Ersteller (oder ein Mod) geantwortet hat (neue Kommentare von anderen Usern auf dem Markt seit unserem Kommentar lesen). \n   - Antwort ist zusagehaft im Sinn von \"Nein, NO bleibt NO ohne CMI-Ankündigung\" oder bestätigt den Wortlaut → melde \"ABSICHERUNG BESTÄTIGT: <Aussage kurz>. Position kann gehalten werden.\"\n   - Antwort deutet auf Intent-Auflösung hin (\"würde YES resolven wenn gelöst\") → melde dringend \"WARNUNG: Ersteller deutet Intent-Auflösung an: <Aussage>. Exit-Entscheidung nötig!\"\n   - Keine Antwort → melde kurz \"Frage steht, keine Antwort yet.\"\n\n4. Zusätzlich bei jedem Lauf: aktuellen Markt-Preis checken (/v0/market/c5chdu0g50). Wenn der Kurs unter 25¢ fällt (NO-Quote >75¢) ohne Erklärang, oder über 55¢ steigt, melde das als bemerkenswerte Bewegung.\n\nFasse jeden Lauf in maximal 3 kurzen Sätzen zusammen. Verändere NICHTS an der Position (keine Bets), außer du erkennst in Punkt 3 die Warnung — dann auch nur melden, NICHT selbst verkaufen.",
+      "prompt": "Du überwachst den Manifold-Markt \"Will some Millennium Prize Problem be solved before 2028?\" (contractId c5chdu0g50). Prüfe via API (https://api.manifold.markets/v0/market/c5chdu0g50 für Kurs, /v0/comments?contractId=c5chdu0g50 für Kommentare). MELDE DICH NUR, wenn eine dieser Bedingungen erfüllt ist: (1) Neue Kommentare seit unserem Kommentar von HackDaMarket (insb. Antwort des Erstellers Grothenfla oder Mods), (2) Kursänderung von mehr als 1 Prozentpunkt gegenüber dem letzten gemeldeten Stand, (3) Auflösung des Marktes, (4) neue signifikante Trades >M$20. Wenn NICHTS davon zutrifft: Gib KEINEN Report aus (keine Null-Reports!). Bei Report: Kurzer deutscher Status mit Kurs, neuen Trades, Positionswert (HackDaMarket: 160,8 NO-Shares, Einsatz M$101). Merke dir den zuletzt gemeldeten Kurs in einer State-Datei /home/agentuser/manifold/millennium_state.json, um Änderungen vergleichen zu können.",
       "skills": [],
       "skill": null,
       "model": null,
@@ -141,15 +144,15 @@
       "schedule_display": "every 3m",
       "repeat": {
         "times": null,
-        "completed": 1963
+        "completed": 1979
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-09T07:46:44.255684+00:00",
-      "next_run_at": "2026-09-14T18:59:51.294711+00:00",
-      "last_run_at": "2026-09-14T18:56:51.294711+00:00",
+      "next_run_at": "2026-09-14T20:04:04.768132+00:00",
+      "last_run_at": "2026-09-14T20:01:04.768132+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -167,9 +170,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T18:55:51.135402+00:00",
-        "dispatched_at": "2026-09-14T18:56:41.194660+00:00",
-        "lateness_seconds": 50.1,
+        "scheduled_at": "2026-09-14T20:00:09.577583+00:00",
+        "dispatched_at": "2026-09-14T20:00:54.874603+00:00",
+        "lateness_seconds": 45.3,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -257,15 +260,15 @@
       "schedule_display": "every 5m",
       "repeat": {
         "times": null,
-        "completed": 607
+        "completed": 620
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:08:33.480266+00:00",
-      "next_run_at": "2026-09-14T19:00:41.571709+00:00",
-      "last_run_at": "2026-09-14T18:55:41.571709+00:00",
+      "next_run_at": "2026-09-14T20:05:55.765375+00:00",
+      "last_run_at": "2026-09-14T20:00:55.765375+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -283,9 +286,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T18:55:40.530632+00:00",
-        "dispatched_at": "2026-09-14T18:55:40.980898+00:00",
-        "lateness_seconds": 0.5,
+        "scheduled_at": "2026-09-14T20:00:54.433579+00:00",
+        "dispatched_at": "2026-09-14T20:00:54.874603+00:00",
+        "lateness_seconds": 0.4,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -315,20 +318,20 @@
       "schedule_display": "every 10m",
       "repeat": {
         "times": null,
-        "completed": 305
+        "completed": 310
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:41:51.789217+00:00",
-      "next_run_at": "2026-09-14T19:06:43.436290+00:00",
-      "last_run_at": "2026-09-14T18:56:43.436290+00:00",
+      "next_run_at": "2026-09-14T20:01:55.132208+00:00",
+      "last_run_at": "2026-09-14T19:51:55.132208+00:00",
       "last_status": "error",
       "last_error": "Script exited with code 1\nstdout:\nTraceback (most recent call last):\n  File \"/home/agentuser/manifold/kraken_multi_bot.py\", line 213, in <module>\n    main()\n  File \"/home/agentuser/manifold/kraken_multi_bot.py\", line 192, in main\n    out.append(f\"BLOCKED [{cfg['name']}]: {sig['blocked']} | Schub {sig.get('move','?')}%\")\n    ^^^\nNameError: name 'out' is not defined. Did you mean: 'oct'?",
       "last_delivery_error": null,
       "last_delivery_unverified": null,
-      "failure_streak": 6,
+      "failure_streak": 3,
       "deliver": "local",
       "origin": {
         "platform": "telegram",
@@ -341,13 +344,13 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-14T18:56:41.085071+00:00",
-        "dispatched_at": "2026-09-14T18:56:41.194660+00:00",
-        "lateness_seconds": 0.1,
+        "scheduled_at": "2026-09-14T19:50:53.146158+00:00",
+        "dispatched_at": "2026-09-14T19:51:52.969401+00:00",
+        "lateness_seconds": 59.8,
         "kind": "on_time"
       },
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-14T18:57:00.190040+00:00"
+  "updated_at": "2026-09-14T20:01:04.768701+00:00"
 }
