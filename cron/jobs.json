@@ -25,15 +25,15 @@
       "schedule_display": "every 15m",
       "repeat": {
         "times": null,
-        "completed": 865
+        "completed": 869
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-05T11:43:54.537523+00:00",
-      "next_run_at": "2026-09-15T03:14:54.877399+00:00",
-      "last_run_at": "2026-09-15T02:59:54.877399+00:00",
+      "next_run_at": "2026-09-15T04:18:59.644394+00:00",
+      "last_run_at": "2026-09-15T04:03:59.644394+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -52,9 +52,9 @@
       "attach_to_session": true,
       "fire_claim": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-15T02:58:40.536403+00:00",
-        "dispatched_at": "2026-09-15T02:59:24.629361+00:00",
-        "lateness_seconds": 44.1,
+        "scheduled_at": "2026-09-15T04:02:55.426472+00:00",
+        "dispatched_at": "2026-09-15T04:03:38.285258+00:00",
+        "lateness_seconds": 42.9,
         "kind": "on_time"
       }
     },
@@ -141,20 +141,20 @@
       "schedule_display": "every 3m",
       "repeat": {
         "times": null,
-        "completed": 2084
+        "completed": 2099
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-09T07:46:44.255684+00:00",
-      "next_run_at": "2026-09-15T03:04:34.615999+00:00",
-      "last_run_at": "2026-09-15T03:01:34.615999+00:00",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-09-15T04:04:46.652294+00:00",
+      "last_run_at": "2026-09-15T04:01:46.652294+00:00",
+      "last_status": "error",
+      "last_error": "Script exited with code 1\nstdout:\nTraceback (most recent call last):\n  File \"/home/agentuser/manifold/maker_bot.py\", line 151, in <module>\n    main()\n  File \"/home/agentuser/manifold/maker_bot.py\", line 106, in main\n    if p < 0.10 or p > 0.90 or len(s[\"orders\"]) >= MAX_LIVE_ORDERS - 1:\n       ^\nUnboundLocalError: cannot access local variable 'p' where it is not associated with a value",
       "last_delivery_error": null,
       "last_delivery_unverified": null,
-      "failure_streak": 0,
+      "failure_streak": 1,
       "deliver": "local",
       "origin": {
         "platform": "telegram",
@@ -167,9 +167,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-15T03:00:34.087584+00:00",
-        "dispatched_at": "2026-09-15T03:01:25.047072+00:00",
-        "lateness_seconds": 51.0,
+        "scheduled_at": "2026-09-15T04:00:46.797084+00:00",
+        "dispatched_at": "2026-09-15T04:01:37.849852+00:00",
+        "lateness_seconds": 51.1,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -257,15 +257,15 @@
       "schedule_display": "every 5m",
       "repeat": {
         "times": null,
-        "completed": 693
+        "completed": 705
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:08:33.480266+00:00",
-      "next_run_at": "2026-09-15T03:05:25.467635+00:00",
-      "last_run_at": "2026-09-15T03:00:25.467635+00:00",
+      "next_run_at": "2026-09-15T04:05:38.240196+00:00",
+      "last_run_at": "2026-09-15T04:00:38.240196+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -283,8 +283,8 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-15T03:00:24.368298+00:00",
-        "dispatched_at": "2026-09-15T03:00:24.842993+00:00",
+        "scheduled_at": "2026-09-15T04:00:37.150756+00:00",
+        "dispatched_at": "2026-09-15T04:00:37.627779+00:00",
         "lateness_seconds": 0.5,
         "kind": "on_time"
       },
@@ -315,15 +315,15 @@
       "schedule_display": "every 10m",
       "repeat": {
         "times": null,
-        "completed": 349
+        "completed": 355
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:41:51.789217+00:00",
-      "next_run_at": "2026-09-15T03:08:26.525923+00:00",
-      "last_run_at": "2026-09-15T02:58:26.525923+00:00",
+      "next_run_at": "2026-09-15T04:09:39.424006+00:00",
+      "last_run_at": "2026-09-15T03:59:39.424006+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -341,13 +341,13 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-15T02:57:24.214564+00:00",
-        "dispatched_at": "2026-09-15T02:58:24.423942+00:00",
-        "lateness_seconds": 60.2,
+        "scheduled_at": "2026-09-15T03:59:37.345843+00:00",
+        "dispatched_at": "2026-09-15T03:59:37.399371+00:00",
+        "lateness_seconds": 0.1,
         "kind": "on_time"
       },
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-15T03:01:34.616432+00:00"
+  "updated_at": "2026-09-15T04:03:59.644930+00:00"
 }
