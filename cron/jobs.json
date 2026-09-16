@@ -25,15 +25,15 @@
       "schedule_display": "every 15m",
       "repeat": {
         "times": null,
-        "completed": 943
+        "completed": 947
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-05T11:43:54.537523+00:00",
-      "next_run_at": "2026-09-16T00:07:21.466244+00:00",
-      "last_run_at": "2026-09-15T23:52:21.466244+00:00",
+      "next_run_at": "2026-09-16T01:11:42.258931+00:00",
+      "last_run_at": "2026-09-16T00:56:42.258931+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -52,9 +52,9 @@
       "attach_to_session": true,
       "fire_claim": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-15T23:51:23.721998+00:00",
-        "dispatched_at": "2026-09-15T23:51:52.147865+00:00",
-        "lateness_seconds": 28.4,
+        "scheduled_at": "2026-09-16T00:55:33.807427+00:00",
+        "dispatched_at": "2026-09-16T00:56:06.096907+00:00",
+        "lateness_seconds": 32.3,
         "kind": "on_time"
       }
     },
@@ -141,20 +141,20 @@
       "schedule_display": "every 3m",
       "repeat": {
         "times": null,
-        "completed": 2397
+        "completed": 2413
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-09T07:46:44.255684+00:00",
-      "next_run_at": "2026-09-16T00:01:00.436133+00:00",
-      "last_run_at": "2026-09-15T23:58:00.436133+00:00",
+      "next_run_at": "2026-09-16T01:05:13.926714+00:00",
+      "last_run_at": "2026-09-16T01:02:13.926714+00:00",
       "last_status": "error",
       "last_error": "Script exited with code 1\nstdout:\nTraceback (most recent call last):\n  File \"/home/agentuser/manifold/maker_bot.py\", line 151, in <module>\n    main()\n  File \"/home/agentuser/manifold/maker_bot.py\", line 106, in main\n    if p < 0.10 or p > 0.90 or len(s[\"orders\"]) >= MAX_LIVE_ORDERS - 1:\n       ^\nUnboundLocalError: cannot access local variable 'p' where it is not associated with a value",
       "last_delivery_error": null,
       "last_delivery_unverified": null,
-      "failure_streak": 172,
+      "failure_streak": 188,
       "deliver": "local",
       "origin": {
         "platform": "telegram",
@@ -167,8 +167,8 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-15T23:56:59.404103+00:00",
-        "dispatched_at": "2026-09-15T23:57:53.449188+00:00",
+        "scheduled_at": "2026-09-16T01:01:13.411334+00:00",
+        "dispatched_at": "2026-09-16T01:02:07.416473+00:00",
         "lateness_seconds": 54.0,
         "kind": "on_time"
       },
@@ -257,15 +257,15 @@
       "schedule_display": "every 5m",
       "repeat": {
         "times": null,
-        "completed": 944
+        "completed": 956
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:08:33.480266+00:00",
-      "next_run_at": "2026-09-16T00:04:54.451769+00:00",
-      "last_run_at": "2026-09-15T23:59:54.451769+00:00",
+      "next_run_at": "2026-09-16T01:05:07.554439+00:00",
+      "last_run_at": "2026-09-16T01:00:07.554439+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -283,9 +283,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-15T23:59:53.418046+00:00",
-        "dispatched_at": "2026-09-15T23:59:53.874873+00:00",
-        "lateness_seconds": 0.5,
+        "scheduled_at": "2026-09-16T01:00:06.471509+00:00",
+        "dispatched_at": "2026-09-16T01:00:06.772424+00:00",
+        "lateness_seconds": 0.3,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -315,20 +315,20 @@
       "schedule_display": "every 10m",
       "repeat": {
         "times": null,
-        "completed": 469
+        "completed": 475
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:41:51.789217+00:00",
-      "next_run_at": "2026-09-16T00:05:54.307923+00:00",
-      "last_run_at": "2026-09-15T23:55:54.307923+00:00",
-      "last_status": "error",
-      "last_error": "Script exited with code 1\nstdout:\nTraceback (most recent call last):\n  File \"/home/agentuser/manifold/kraken_multi_bot.py\", line 215, in <module>\n    main()\n  File \"/home/agentuser/manifold/kraken_multi_bot.py\", line 194, in main\n    out.append(f\"BLOCKED [{cfg['name']}]: {sig['blocked']} | Schub {sig.get('move','?')}%\")\n    ^^^\nNameError: name 'out' is not defined. Did you mean: 'oct'?",
+      "next_run_at": "2026-09-16T01:07:08.246282+00:00",
+      "last_run_at": "2026-09-16T00:57:08.246282+00:00",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "last_delivery_unverified": null,
-      "failure_streak": 9,
+      "failure_streak": 0,
       "deliver": "local",
       "origin": {
         "platform": "telegram",
@@ -341,13 +341,13 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-15T23:55:52.263781+00:00",
-        "dispatched_at": "2026-09-15T23:55:53.017114+00:00",
-        "lateness_seconds": 0.8,
+        "scheduled_at": "2026-09-16T00:56:06.269747+00:00",
+        "dispatched_at": "2026-09-16T00:57:06.306147+00:00",
+        "lateness_seconds": 60.0,
         "kind": "on_time"
       },
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-15T23:59:54.452351+00:00"
+  "updated_at": "2026-09-16T01:02:13.927005+00:00"
 }
