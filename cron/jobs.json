@@ -25,15 +25,15 @@
       "schedule_display": "every 15m",
       "repeat": {
         "times": null,
-        "completed": 988
+        "completed": 992
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-05T11:43:54.537523+00:00",
-      "next_run_at": "2026-09-16T12:09:49.818429+00:00",
-      "last_run_at": "2026-09-16T11:54:49.818429+00:00",
+      "next_run_at": "2026-09-16T13:14:05.325759+00:00",
+      "last_run_at": "2026-09-16T12:59:05.325759+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -52,9 +52,9 @@
       "attach_to_session": true,
       "fire_claim": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-16T11:53:49.146539+00:00",
-        "dispatched_at": "2026-09-16T11:54:29.028331+00:00",
-        "lateness_seconds": 39.9,
+        "scheduled_at": "2026-09-16T12:58:04.484993+00:00",
+        "dispatched_at": "2026-09-16T12:58:42.932843+00:00",
+        "lateness_seconds": 38.4,
         "kind": "on_time"
       }
     },
@@ -141,15 +141,15 @@
       "schedule_display": "every 3m",
       "repeat": {
         "times": null,
-        "completed": 2577
+        "completed": 2591
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-09T07:46:44.255684+00:00",
-      "next_run_at": "2026-09-16T12:03:40.739680+00:00",
-      "last_run_at": "2026-09-16T12:00:40.739680+00:00",
+      "next_run_at": "2026-09-16T12:59:53.005388+00:00",
+      "last_run_at": "2026-09-16T12:56:53.005388+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -167,9 +167,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-16T11:59:38.866414+00:00",
-        "dispatched_at": "2026-09-16T12:00:30.327927+00:00",
-        "lateness_seconds": 51.5,
+        "scheduled_at": "2026-09-16T12:55:52.474039+00:00",
+        "dispatched_at": "2026-09-16T12:56:42.513422+00:00",
+        "lateness_seconds": 50.0,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -257,15 +257,15 @@
       "schedule_display": "every 5m",
       "repeat": {
         "times": null,
-        "completed": 1088
+        "completed": 1099
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:08:33.480266+00:00",
-      "next_run_at": "2026-09-16T12:07:31.376754+00:00",
-      "last_run_at": "2026-09-16T12:02:31.376754+00:00",
+      "next_run_at": "2026-09-16T13:02:43.304758+00:00",
+      "last_run_at": "2026-09-16T12:57:43.304758+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -283,8 +283,8 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-16T12:02:30.344807+00:00",
-        "dispatched_at": "2026-09-16T12:02:30.777467+00:00",
+        "scheduled_at": "2026-09-16T12:57:42.340809+00:00",
+        "dispatched_at": "2026-09-16T12:57:42.715524+00:00",
         "lateness_seconds": 0.4,
         "kind": "on_time"
       },
@@ -315,20 +315,20 @@
       "schedule_display": "every 10m",
       "repeat": {
         "times": null,
-        "completed": 537
+        "completed": 543
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:41:51.789217+00:00",
-      "next_run_at": "2026-09-16T12:04:30.847207+00:00",
-      "last_run_at": "2026-09-16T11:54:30.847207+00:00",
+      "next_run_at": "2026-09-16T13:05:44.030275+00:00",
+      "last_run_at": "2026-09-16T12:55:44.030275+00:00",
       "last_status": "error",
       "last_error": "Script exited with code 1\nstdout:\nTraceback (most recent call last):\n  File \"/home/agentuser/manifold/kraken_multi_bot.py\", line 215, in <module>\n    main()\n  File \"/home/agentuser/manifold/kraken_multi_bot.py\", line 194, in main\n    out.append(f\"BLOCKED [{cfg['name']}]: {sig['blocked']} | Schub {sig.get('move','?')}%\")\n    ^^^\nNameError: name 'out' is not defined. Did you mean: 'oct'?",
       "last_delivery_error": null,
       "last_delivery_unverified": null,
-      "failure_streak": 2,
+      "failure_streak": 5,
       "deliver": "local",
       "origin": {
         "platform": "telegram",
@@ -341,13 +341,13 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-16T11:54:28.618181+00:00",
-        "dispatched_at": "2026-09-16T11:54:29.028331+00:00",
+        "scheduled_at": "2026-09-16T12:55:41.906698+00:00",
+        "dispatched_at": "2026-09-16T12:55:42.296569+00:00",
         "lateness_seconds": 0.4,
         "kind": "on_time"
       },
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-16T12:02:31.377264+00:00"
+  "updated_at": "2026-09-16T12:59:05.326222+00:00"
 }
