@@ -25,15 +25,15 @@
       "schedule_display": "every 15m",
       "repeat": {
         "times": null,
-        "completed": 984
+        "completed": 988
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-05T11:43:54.537523+00:00",
-      "next_run_at": "2026-09-16T11:05:59.607149+00:00",
-      "last_run_at": "2026-09-16T10:50:59.607149+00:00",
+      "next_run_at": "2026-09-16T12:09:49.818429+00:00",
+      "last_run_at": "2026-09-16T11:54:49.818429+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -52,9 +52,9 @@
       "attach_to_session": true,
       "fire_claim": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-16T10:49:39.335768+00:00",
-        "dispatched_at": "2026-09-16T10:50:15.089801+00:00",
-        "lateness_seconds": 35.8,
+        "scheduled_at": "2026-09-16T11:53:49.146539+00:00",
+        "dispatched_at": "2026-09-16T11:54:29.028331+00:00",
+        "lateness_seconds": 39.9,
         "kind": "on_time"
       }
     },
@@ -141,15 +141,15 @@
       "schedule_display": "every 3m",
       "repeat": {
         "times": null,
-        "completed": 2562
+        "completed": 2577
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-09T07:46:44.255684+00:00",
-      "next_run_at": "2026-09-16T11:03:37.218008+00:00",
-      "last_run_at": "2026-09-16T11:00:37.218008+00:00",
+      "next_run_at": "2026-09-16T12:03:40.739680+00:00",
+      "last_run_at": "2026-09-16T12:00:40.739680+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -167,9 +167,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-16T10:59:26.020134+00:00",
-        "dispatched_at": "2026-09-16T11:00:17.306844+00:00",
-        "lateness_seconds": 51.3,
+        "scheduled_at": "2026-09-16T11:59:38.866414+00:00",
+        "dispatched_at": "2026-09-16T12:00:30.327927+00:00",
+        "lateness_seconds": 51.5,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -199,15 +199,15 @@
       "schedule_display": "every 360m",
       "repeat": {
         "times": null,
-        "completed": 15
+        "completed": 16
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T11:50:45.766755+00:00",
-      "next_run_at": "2026-09-16T11:57:12.449899+00:00",
-      "last_run_at": "2026-09-16T05:57:12.449899+00:00",
+      "next_run_at": "2026-09-16T17:57:30.685461+00:00",
+      "last_run_at": "2026-09-16T11:57:30.685461+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -225,8 +225,8 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-16T05:56:54.182477+00:00",
-        "dispatched_at": "2026-09-16T05:57:11.393924+00:00",
+        "scheduled_at": "2026-09-16T11:57:12.449899+00:00",
+        "dispatched_at": "2026-09-16T11:57:29.685622+00:00",
         "lateness_seconds": 17.2,
         "kind": "on_time"
       },
@@ -257,15 +257,15 @@
       "schedule_display": "every 5m",
       "repeat": {
         "times": null,
-        "completed": 1076
+        "completed": 1088
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:08:33.480266+00:00",
-      "next_run_at": "2026-09-16T11:07:18.401662+00:00",
-      "last_run_at": "2026-09-16T11:02:18.401662+00:00",
+      "next_run_at": "2026-09-16T12:07:31.376754+00:00",
+      "last_run_at": "2026-09-16T12:02:31.376754+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -283,9 +283,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-16T11:02:17.281699+00:00",
-        "dispatched_at": "2026-09-16T11:02:17.753268+00:00",
-        "lateness_seconds": 0.5,
+        "scheduled_at": "2026-09-16T12:02:30.344807+00:00",
+        "dispatched_at": "2026-09-16T12:02:30.777467+00:00",
+        "lateness_seconds": 0.4,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -315,20 +315,20 @@
       "schedule_display": "every 10m",
       "repeat": {
         "times": null,
-        "completed": 532
+        "completed": 537
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:41:51.789217+00:00",
-      "next_run_at": "2026-09-16T11:10:19.619025+00:00",
-      "last_run_at": "2026-09-16T11:00:19.619025+00:00",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-09-16T12:04:30.847207+00:00",
+      "last_run_at": "2026-09-16T11:54:30.847207+00:00",
+      "last_status": "error",
+      "last_error": "Script exited with code 1\nstdout:\nTraceback (most recent call last):\n  File \"/home/agentuser/manifold/kraken_multi_bot.py\", line 215, in <module>\n    main()\n  File \"/home/agentuser/manifold/kraken_multi_bot.py\", line 194, in main\n    out.append(f\"BLOCKED [{cfg['name']}]: {sig['blocked']} | Schub {sig.get('move','?')}%\")\n    ^^^\nNameError: name 'out' is not defined. Did you mean: 'oct'?",
       "last_delivery_error": null,
       "last_delivery_unverified": null,
-      "failure_streak": 0,
+      "failure_streak": 2,
       "deliver": "local",
       "origin": {
         "platform": "telegram",
@@ -341,13 +341,13 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-16T11:00:16.928236+00:00",
-        "dispatched_at": "2026-09-16T11:00:17.306844+00:00",
+        "scheduled_at": "2026-09-16T11:54:28.618181+00:00",
+        "dispatched_at": "2026-09-16T11:54:29.028331+00:00",
         "lateness_seconds": 0.4,
         "kind": "on_time"
       },
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-16T11:02:18.402008+00:00"
+  "updated_at": "2026-09-16T12:02:31.377264+00:00"
 }
