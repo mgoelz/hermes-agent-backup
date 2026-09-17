@@ -25,15 +25,15 @@
       "schedule_display": "every 15m",
       "repeat": {
         "times": null,
-        "completed": 1074
+        "completed": 1078
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-05T11:43:54.537523+00:00",
-      "next_run_at": "2026-09-17T11:11:53.412124+00:00",
-      "last_run_at": "2026-09-17T10:56:53.412124+00:00",
+      "next_run_at": "2026-09-17T12:15:45.679791+00:00",
+      "last_run_at": "2026-09-17T12:00:45.679791+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -52,9 +52,9 @@
       "attach_to_session": true,
       "fire_claim": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-17T10:55:47.774377+00:00",
-        "dispatched_at": "2026-09-17T10:56:19.060363+00:00",
-        "lateness_seconds": 31.3,
+        "scheduled_at": "2026-09-17T11:59:41.700734+00:00",
+        "dispatched_at": "2026-09-17T12:00:21.141120+00:00",
+        "lateness_seconds": 39.4,
         "kind": "on_time"
       }
     },
@@ -141,15 +141,15 @@
       "schedule_display": "every 3m",
       "repeat": {
         "times": null,
-        "completed": 2920
+        "completed": 2935
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-09T07:46:44.255684+00:00",
-      "next_run_at": "2026-09-17T11:00:28.740831+00:00",
-      "last_run_at": "2026-09-17T10:57:28.740831+00:00",
+      "next_run_at": "2026-09-17T12:00:31.165737+00:00",
+      "last_run_at": "2026-09-17T11:57:31.165737+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -167,9 +167,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-17T10:56:32.249048+00:00",
-        "dispatched_at": "2026-09-17T10:57:19.122098+00:00",
-        "lateness_seconds": 46.9,
+        "scheduled_at": "2026-09-17T11:56:32.326414+00:00",
+        "dispatched_at": "2026-09-17T11:57:21.027876+00:00",
+        "lateness_seconds": 48.7,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -199,15 +199,15 @@
       "schedule_display": "every 360m",
       "repeat": {
         "times": null,
-        "completed": 19
+        "completed": 20
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T11:50:45.766755+00:00",
-      "next_run_at": "2026-09-17T11:58:25.344416+00:00",
-      "last_run_at": "2026-09-17T05:58:25.344416+00:00",
+      "next_run_at": "2026-09-17T17:59:22.276229+00:00",
+      "last_run_at": "2026-09-17T11:59:22.276229+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -225,9 +225,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-17T05:58:06.924130+00:00",
-        "dispatched_at": "2026-09-17T05:58:24.172255+00:00",
-        "lateness_seconds": 17.2,
+        "scheduled_at": "2026-09-17T11:58:25.344416+00:00",
+        "dispatched_at": "2026-09-17T11:59:21.096393+00:00",
+        "lateness_seconds": 55.8,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -257,15 +257,15 @@
       "schedule_display": "every 5m",
       "repeat": {
         "times": null,
-        "completed": 1360
+        "completed": 1370
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:08:33.480266+00:00",
-      "next_run_at": "2026-09-17T11:01:19.775297+00:00",
-      "last_run_at": "2026-09-17T10:56:19.775297+00:00",
+      "next_run_at": "2026-09-17T12:01:21.600036+00:00",
+      "last_run_at": "2026-09-17T11:56:21.600036+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -283,8 +283,8 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-17T10:55:19.509842+00:00",
-        "dispatched_at": "2026-09-17T10:56:19.060363+00:00",
+        "scheduled_at": "2026-09-17T11:55:21.377104+00:00",
+        "dispatched_at": "2026-09-17T11:56:20.984752+00:00",
         "lateness_seconds": 59.6,
         "kind": "on_time"
       },
@@ -315,15 +315,15 @@
       "schedule_display": "every 10m",
       "repeat": {
         "times": null,
-        "completed": 671
+        "completed": 676
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:41:51.789217+00:00",
-      "next_run_at": "2026-09-17T11:09:21.652805+00:00",
-      "last_run_at": "2026-09-17T10:59:21.652805+00:00",
+      "next_run_at": "2026-09-17T12:04:23.424755+00:00",
+      "last_run_at": "2026-09-17T11:54:23.424755+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -341,8 +341,8 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-17T10:58:21.092003+00:00",
-        "dispatched_at": "2026-09-17T10:59:19.187724+00:00",
+        "scheduled_at": "2026-09-17T11:53:22.853717+00:00",
+        "dispatched_at": "2026-09-17T11:54:20.911626+00:00",
         "lateness_seconds": 58.1,
         "kind": "on_time"
       },
@@ -350,8 +350,8 @@
     },
     {
       "id": "52867305e61e",
-      "name": "Parmigiano 2kg Preis-Watch",
-      "prompt": "Lade den product-price-monitor Skill und führe den Tick für den Watch-Vertrag unter ~/.hermes/price-watches/parmigiano-2kg-käserei.json aus. Kontext: Michael möchte 2 kg Parmigiano Reggiano DOP direkt von einer Käserei kaufen, ideal 2x1 kg vakuumverpackt, Mindestreife 18 Monate (lieber 24-36 M), Lieferung nach Deutschland. Prüfe die Kandidaten-URLs im Vertrag auf Preisänderungen/Aktionen und mache 1-2 web_search-Queries nach neuen Direktvertriebs-Angeboten (z.B. 'Parmigiano Reggiano 1kg Angebot Käserei 24 Monate' und Varianten mit 'Rabatt'/'Aktion'). Alert nur wenn: All-in-Preis für 2 kg inkl. Versand nach DE unter 45,60 EUR fällt, Basispreis unter 21 EUR/kg, oder Aktion >10% bei einem Kandidaten. Vergleiche immer all-in inkl. Versand (Gratisversand-Schwellen beachten: Araldi-Shop ab 65 EUR, Montecoppe ab 89 EUR, 4 Madonne sonst 12 EUR nach DE, Bio Reggiani EU gratis erst ab 300 EUR). Keine Duplikat-Alerts, kein Report wenn nichts Neues/ Billigeres gefunden wurde (Stille ist ok). Wenn ein klares Bestangebot vorliegt, das die Baseline schlägt, melde es kompakt auf Deutsch mit Preis, Reife, Händler, Versand und Link.",
+      "name": "Parmigiano 2kg BIO Preis-Watch",
+      "prompt": "Lade den product-price-monitor Skill und führe den Tick für den Watch-Vertrag unter ~/.hermes/price-watches/parmigiano-2kg-bio.json aus. WICHTIG: NUR EU-Bio-zertifizierter Parmigiano Reggiano Biologico zählt — konventionelle Käse (Montecoppe, Bucamante, San Pier Damiani, Araldi konventionell) sind ausdrücklich irrelevant. Michael möchte 2 kg Bio-Parmigiano Reggiano direkt ab Bio-Käserei, ideal 2x1 kg vakuumverpackt, Mindestreife 18 Monate (lieber 24-30 M), Lieferung nach Deutschland. Aktuelle Rangliste all-in 2kg: 1) Konsortiums-Shop Biologico 24M 27,40/kg = 54,80 EUR frei Haus (Gratisversand ab 65 EUR je Käserei) = BEST; 2) 4 Madonne Bio 24M 26,13/kg + 12 EUR Versand, Newsletter -5% => ~61,65; 3) Bio Reggiani Bio 24M -10% = 22,50/kg + 18 EUR DE-Versand = 63,00 (bester Kilopreis, lohnt erst ab ~5 kg); 4) Casa Olivino FerrariBio 39,50/kg; 5) Parmashop 41,25/kg. Prüfe die Kandidaten-URLs im Vertrag auf Preis-/Lageränderungen und mache 1-2 web_search-Queries nach neuen Bio-Angeboten. Alert nur wenn: All-in-Preis für 2kg inkl. Versand nach DE unter 54,80 EUR fällt, frei-Haus-Äquivalent unter 27,40 EUR/kg, Aktion >10% bei einem Kandidaten, oder ein ausverkaufter/bisher teurer Kandidat wird wieder lieferbar bzw. deutlich billiger. Keine Duplikat-Alerts, kein Report wenn nichts Billigeres/Neues (Stille ist ok). Bei Fund: kompakt auf Deutsch mit Preis, Reife, Händler, Versand, Link.",
       "skills": [
         "product-price-monitor"
       ],
@@ -402,5 +402,5 @@
       "workdir": null
     }
   ],
-  "updated_at": "2026-09-17T10:59:21.653159+00:00"
+  "updated_at": "2026-09-17T12:00:45.680208+00:00"
 }
