@@ -25,15 +25,15 @@
       "schedule_display": "every 15m",
       "repeat": {
         "times": null,
-        "completed": 1070
+        "completed": 1074
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-05T11:43:54.537523+00:00",
-      "next_run_at": "2026-09-17T10:07:40.916903+00:00",
-      "last_run_at": "2026-09-17T09:52:40.916903+00:00",
+      "next_run_at": "2026-09-17T11:11:53.412124+00:00",
+      "last_run_at": "2026-09-17T10:56:53.412124+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -52,9 +52,9 @@
       "attach_to_session": true,
       "fire_claim": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-17T09:51:39.402272+00:00",
-        "dispatched_at": "2026-09-17T09:52:15.363895+00:00",
-        "lateness_seconds": 36.0,
+        "scheduled_at": "2026-09-17T10:55:47.774377+00:00",
+        "dispatched_at": "2026-09-17T10:56:19.060363+00:00",
+        "lateness_seconds": 31.3,
         "kind": "on_time"
       }
     },
@@ -141,15 +141,15 @@
       "schedule_display": "every 3m",
       "repeat": {
         "times": null,
-        "completed": 2906
+        "completed": 2920
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-09T07:46:44.255684+00:00",
-      "next_run_at": "2026-09-17T10:04:29.350744+00:00",
-      "last_run_at": "2026-09-17T10:01:29.350744+00:00",
+      "next_run_at": "2026-09-17T11:00:28.740831+00:00",
+      "last_run_at": "2026-09-17T10:57:28.740831+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -167,9 +167,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-17T10:00:28.407328+00:00",
-        "dispatched_at": "2026-09-17T10:01:17.358234+00:00",
-        "lateness_seconds": 49.0,
+        "scheduled_at": "2026-09-17T10:56:32.249048+00:00",
+        "dispatched_at": "2026-09-17T10:57:19.122098+00:00",
+        "lateness_seconds": 46.9,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -257,15 +257,15 @@
       "schedule_display": "every 5m",
       "repeat": {
         "times": null,
-        "completed": 1351
+        "completed": 1360
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:08:33.480266+00:00",
-      "next_run_at": "2026-09-17T10:07:18.102062+00:00",
-      "last_run_at": "2026-09-17T10:02:18.102062+00:00",
+      "next_run_at": "2026-09-17T11:01:19.775297+00:00",
+      "last_run_at": "2026-09-17T10:56:19.775297+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -283,9 +283,9 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-17T10:02:17.146380+00:00",
-        "dispatched_at": "2026-09-17T10:02:17.410651+00:00",
-        "lateness_seconds": 0.3,
+        "scheduled_at": "2026-09-17T10:55:19.509842+00:00",
+        "dispatched_at": "2026-09-17T10:56:19.060363+00:00",
+        "lateness_seconds": 59.6,
         "kind": "on_time"
       },
       "fire_claim": null
@@ -315,20 +315,20 @@
       "schedule_display": "every 10m",
       "repeat": {
         "times": null,
-        "completed": 666
+        "completed": 671
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-12T12:41:51.789217+00:00",
-      "next_run_at": "2026-09-17T10:14:19.222399+00:00",
-      "last_run_at": "2026-09-17T10:04:19.222399+00:00",
-      "last_status": "error",
-      "last_error": "Script exited with code 1\nstdout:\nTraceback (most recent call last):\n  File \"/home/agentuser/manifold/kraken_multi_bot.py\", line 215, in <module>\n    main()\n  File \"/home/agentuser/manifold/kraken_multi_bot.py\", line 194, in main\n    out.append(f\"BLOCKED [{cfg['name']}]: {sig['blocked']} | Schub {sig.get('move','?')}%\")\n    ^^^\nNameError: name 'out' is not defined. Did you mean: 'oct'?",
+      "next_run_at": "2026-09-17T11:09:21.652805+00:00",
+      "last_run_at": "2026-09-17T10:59:21.652805+00:00",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "last_delivery_unverified": null,
-      "failure_streak": 8,
+      "failure_streak": 0,
       "deliver": "local",
       "origin": {
         "platform": "telegram",
@@ -341,13 +341,66 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-09-17T10:03:17.855673+00:00",
-        "dispatched_at": "2026-09-17T10:04:17.480308+00:00",
-        "lateness_seconds": 59.6,
+        "scheduled_at": "2026-09-17T10:58:21.092003+00:00",
+        "dispatched_at": "2026-09-17T10:59:19.187724+00:00",
+        "lateness_seconds": 58.1,
         "kind": "on_time"
       },
       "fire_claim": null
+    },
+    {
+      "id": "52867305e61e",
+      "name": "Parmigiano 2kg Preis-Watch",
+      "prompt": "Lade den product-price-monitor Skill und führe den Tick für den Watch-Vertrag unter ~/.hermes/price-watches/parmigiano-2kg-käserei.json aus. Kontext: Michael möchte 2 kg Parmigiano Reggiano DOP direkt von einer Käserei kaufen, ideal 2x1 kg vakuumverpackt, Mindestreife 18 Monate (lieber 24-36 M), Lieferung nach Deutschland. Prüfe die Kandidaten-URLs im Vertrag auf Preisänderungen/Aktionen und mache 1-2 web_search-Queries nach neuen Direktvertriebs-Angeboten (z.B. 'Parmigiano Reggiano 1kg Angebot Käserei 24 Monate' und Varianten mit 'Rabatt'/'Aktion'). Alert nur wenn: All-in-Preis für 2 kg inkl. Versand nach DE unter 45,60 EUR fällt, Basispreis unter 21 EUR/kg, oder Aktion >10% bei einem Kandidaten. Vergleiche immer all-in inkl. Versand (Gratisversand-Schwellen beachten: Araldi-Shop ab 65 EUR, Montecoppe ab 89 EUR, 4 Madonne sonst 12 EUR nach DE, Bio Reggiani EU gratis erst ab 300 EUR). Keine Duplikat-Alerts, kein Report wenn nichts Neues/ Billigeres gefunden wurde (Stille ist ok). Wenn ein klares Bestangebot vorliegt, das die Baseline schlägt, melde es kompakt auf Deutsch mit Preis, Reife, Händler, Versand und Link.",
+      "skills": [
+        "product-price-monitor"
+      ],
+      "skill": "product-price-monitor",
+      "model": null,
+      "provider": null,
+      "provider_snapshot": "zai",
+      "model_snapshot": "glm-5.3-flash",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "monitor_script": null,
+      "monitor_url": null,
+      "monitor_state": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "display": "every day at 9am"
+      },
+      "schedule_display": "every day at 9am",
+      "repeat": {
+        "times": null,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-09-17T10:53:03.231611+00:00",
+      "next_run_at": "2026-09-18T09:00:00+00:00",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "last_delivery_unverified": null,
+      "failure_streak": 0,
+      "deliver": "telegram",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "6443941773",
+        "chat_name": "Michael",
+        "thread_id": "602",
+        "user_id": "6443941773",
+        "scope_id": null
+      },
+      "enabled_toolsets": null,
+      "workdir": null
     }
   ],
-  "updated_at": "2026-09-17T10:04:19.222748+00:00"
+  "updated_at": "2026-09-17T10:59:21.653159+00:00"
 }
