@@ -1,1 +1,3 @@
 Harte Vorgabe bei Geschäftsideen: nichts Verwerfliches, keine Grauzonen (keine Fake-Personalisierung, kein Spam-Outbound, kein fragwürdiges Scraping personenbezogener Daten, keine täuschenden Automatisierungen). Nur saubere, hochwertige, legitime Angebote mit echtem Kundennutzen. Michael prüft Ideen aktiv auf ethische Vertretbarkeit.
+§
+Stehende Vorgabe: Wenn Michael eine Kauf-/Investitionsempfehlung gibt (Produkt, Krypto, Market-Position o. ä.), immer direkt den Link zur Quelle/dem Angebot mitliefern.
