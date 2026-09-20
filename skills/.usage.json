@@ -679,15 +679,15 @@
     "created_at": "2026-09-05T11:55:34.384833+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-09-15T09:28:17.574444+00:00",
-    "last_reused_patch_generation": 42,
-    "last_used_at": "2026-09-15T09:27:15.322908+00:00",
-    "last_viewed_at": "2026-09-15T09:27:15.318498+00:00",
+    "last_reused_patch_generation": 44,
+    "last_used_at": "2026-09-19T23:14:18.734422+00:00",
+    "last_viewed_at": "2026-09-19T23:14:18.730189+00:00",
     "patch_count": 44,
     "patch_generation": 44,
     "pinned": false,
     "state": "active",
-    "use_count": 32,
-    "view_count": 32
+    "use_count": 33,
+    "view_count": 33
   },
   "product-price-monitor": {
     "archived_at": null,

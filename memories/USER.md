@@ -1,3 +1,5 @@
 Harte Vorgabe bei Geschäftsideen: nichts Verwerfliches, keine Grauzonen (keine Fake-Personalisierung, kein Spam-Outbound, kein fragwürdiges Scraping personenbezogener Daten, keine täuschenden Automatisierungen). Nur saubere, hochwertige, legitime Angebote mit echtem Kundennutzen. Michael prüft Ideen aktiv auf ethische Vertretbarkeit.
 §
 Stehende Vorgabe: Wenn Michael eine Kauf-/Investitionsempfehlung gibt (Produkt, Krypto, Market-Position o. ä.), immer direkt den Link zur Quelle/dem Angebot mitliefern.
+§
+Michael bringt eigene Trading-Strategieideen ein (z.B. Breakout-Käufe, CRO) und erwartet: gründlicher Daten-Backtest vor jedem Deployment, Kosten/Slippage eingerchnet, ehrliches Fazit auch wenn es die Idee verwirft. Will Geld verdienen, nicht nur Paper-Spielerei — Paper-Systeme nur als Labor akzeptabel, wenn Perspektive auf echtes Einkommen erkennbar bleibt.
